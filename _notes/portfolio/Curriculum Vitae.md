@@ -7,11 +7,10 @@ date: 2026-09-03
 <img class="cv-portrait" src="/assets/img/profile.jpeg" alt="Chico Viana" />
 
 I'm **João "Chico" Viana**, a particle-physics researcher at the Faculdade
-de Ciências da Universidade de Lisboa — my PhD thesis is submitted and I'm
-awaiting the defence. My day-to-day work is heavy scientific computing — large parameter-space scans, numerical solutions of
-Boltzmann/transport equations, and finite-temperature field theory — and this
-site collects the data-science and machine-learning projects I build alongside
-it.
+de Ciências da Universidade de Lisboa, my PhD thesis is submitted and I'm
+awaiting the defence. My day-to-day work is heavy scientific computing, large parameter-space scans, numerical solutions of Boltzmann/transport equations, and finite-temperature field theory. 
+
+This site contains my shift into data science/machine learning, which peaked my interest in recent years with the rise of the transformer and other architectures. My main interests are building highly reliable systems/models that are able to run without many resources. Here I present personal projects that showcase my skills in computing and data science/machine learning.
 
 [**Download the full CV (PDF)**](/assets/Curriculum_Vitae_Joao_Viana.pdf)
 
@@ -24,29 +23,31 @@ it.
 
 ## Computational & technical skills
 
-- **Python** for scientific computing and data analysis; **C++** for performance-critical code.
-- Numerical methods: root finding, ODE/PDE integration, Monte-Carlo and large-scale parameter scans.
-- Boltzmann/transport equations and finite-temperature quantum field theory.
-- Git, GitHub Actions CI/CD, and containerised workflows with Docker.
+- Python for scientific computing, data analysis and plots; C++ for performance-critical code and Mathematica for symbolic computations
+- Mathematical skills: differential and integral calculus, linear algebra, statistics, multivariate analysis, complex analysis, mechanics
+- Numerical methods: root finding, minimisation algorithms, ODE/PDE integration, Monte-Carlo and large-scale parameter scans.
+- Git, GitHub Actions CI/CD, and containerised workflows with Docker and Docker Compose.
 
 ## Machine learning & data science
 
-From the project write-ups on this site, plus:
+As machine learning is extremely important in particle physics, I attended two workshops about machine learning
 
-- **ML4Physics @ Ljubljana** school — machine-learning methods for physics data.
-- **Machine Learning for Physics** workshop, LIP Lisboa (March 2025) — hands-on ML-for-physics exercises.
+- [**ML4Physics @ Ljubljana** school](https://indico.cern.ch/event/1488532/) — machine-learning methods for physics data.
+- [**Machine Learning for Physics** workshop, LIP Lisboa](https://indico.lip.pt/event/1909/) — hands-on ML-for-physics exercises.
 
-- **Tools:** Python, PyTorch, scikit-learn, pandas, NumPy, Matplotlib.
-- **Tabular ML:** end-to-end pipelines — EDA and feature engineering, model selection across linear models, tree ensembles and neural nets, cross-validated hyperparameter search, and evaluation with decision-threshold tuning for imbalanced classes.
+I have a toolchain of numerical skills, growing by the day, that can be used in a multitude of scenarios. That toolchain contains
+
+- python, pytorch, scikit-learn, pandas, NumPy, Matplotlib, scipy, BeautifulSoup.
+- **Tabular ML:**  EDA and feature engineering, model selection across linear models, tree ensembles and neural nets, cross-validated hyperparameter search, and evaluation with decision-threshold tuning for imbalanced classes.
 - **Computer vision:** unsupervised anomaly detection with convolutional autoencoders and PatchCore, using transfer learning from pretrained CNN backbones.
 - **LLMs & RAG:** retrieval-augmented generation with locally-served models (Ollama), ChromaDB vector store, and sentence-transformer embeddings.
-- **Deployment:** FastAPI services and Streamlit front-ends, containerised with Docker Compose.
+- **Deployment:** FastAPI services and Streamlit front-ends, containerised with Docker and orchestrated with Docker Compose.
 
 ## Scientific software
 
 - **BSMPT v3** — co-author of the open-source C++/Python tool for phase transitions and primordial gravitational waves in extended Higgs sectors (arXiv:2404.19037).
 
-## Selected publications
+## Relevant publications
 
 Seven publications in total (full list in the PDF). Most relevant here:
 
