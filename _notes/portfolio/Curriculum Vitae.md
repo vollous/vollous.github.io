@@ -28,7 +28,8 @@ it.
 - **Python** for scientific computing and data analysis; **C++** for performance-critical code.
 - Numerical methods: root finding, ODE/PDE integration, Monte-Carlo and large-scale parameter scans, bounce-action computation.
 - Boltzmann / transport equations, finite-temperature quantum field theory, renormalization.
-- Version control with Git; reproducible, containerised workflows.
+- Version control with Git and GitHub; collaborative workflows (branching, pull requests, code review).
+- CI/CD with GitHub Actions — automated testing, builds and deployments; reproducible, containerised workflows with Docker and Docker Compose.
 
 ## Machine learning & data science
 
