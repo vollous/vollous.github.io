@@ -4,7 +4,7 @@ feed: show
 date: 2026-07-21
 ---
 
-The goal of this project is to explore the effects of AI on students. The data is available on Kagle (https://www.kaggle.com/datasets/laveshjadon/ai-impact-on-students) and its entirely synthetic. The aim is to
+The goal of this project is to explore the effects of AI on students. The data is available on [Kaggle](https://www.kaggle.com/datasets/laveshjadon/ai-impact-on-students) and its entirely synthetic. The aim is to
 
 - Perform EPA
 - Train a model to predict `Post_Semester_GPA` (regression)

@@ -6,15 +6,15 @@ date: 2026-09-03
 
 In this project, I wanted to take a very small LLM, sub 1B parameters, and boost its performance with a RAG system. I chose to work in the context of the **NumPy** documentation, since it contains many details, arguments and functions, so a small LLM is prone to hallucinating about it.
 
-The LLM I decided to use is `ibm-granite/granite-4.0-h-350m` (https://huggingface.co/ibm-granite/granite-4.0-h-350m), which has only 350M parameters. It is so lightweight that it runs on my machine at incredible speed, and it also supports parallel calls on a single `ollama serve`. Because the model is so small, it does not hold much knowledge, which makes the difference between the plain chat and the RAG-powered chat more noticeable. For a production project one should, of course, use the best LLM available.
+The LLM I decided to use is [`ibm-granite/granite-4.0-h-350m`](https://huggingface.co/ibm-granite/granite-4.0-h-350m), which has only 350M parameters. It is so lightweight that it runs on my machine at incredible speed, and it also supports parallel calls on a single `ollama serve`. Because the model is so small, it does not hold much knowledge, which makes the difference between the plain chat and the RAG-powered chat more noticeable. For a production project one should, of course, use the best LLM available.
 
-The RAG system I used is the default `chromadb` (https://www.trychroma.com/home) with the default sentence transformer `sentence-transformers/all-MiniLM-L6-v2`.
+The RAG system I used is the default [`chromadb`](https://www.trychroma.com/home) with the default sentence transformer `sentence-transformers/all-MiniLM-L6-v2`.
 
 To keep the project *scalable*, everything was set up with Docker containers (frontend, backend, ollama) and brought up together with Docker Compose. The frontend and backend communicate through a REST API built with `fastapi`. The frontend was built with `streamlit`. The LLM can be served either by an `ollama` instance running in a Docker container or by the `ollama` server on the host (on macOS, Docker cannot use Metal inside a container); we could also use a cloud LLM provider such as ChatGPT or Claude, but we chose not to so that everything runs locally.
 
 # Getting the context
 
-To build the RAG system, we need extra information to provide as context to the LLM. For that, I downloaded the entire **NumPy 2.5** documentation (https://numpy.org/doc/2.5/numpy-html.zip), extracted it and parsed it with the **BeautifulSoup** package. For each HTML file (i.e. each page), I treated every **\<article\>** HTML element as one chunk available for matching. There are other ways of doing this. In general one should try several chunk sizes, with or without overlap, but in my case this did not make much sense: each page is independent of the others, and it would make no sense to split a single page. For this reason, each HTML page is its own chunk.
+To build the RAG system, we need extra information to provide as context to the LLM. For that, I downloaded the entire [**NumPy 2.5** documentation](https://numpy.org/doc/2.5/numpy-html.zip), extracted it and parsed it with the **BeautifulSoup** package. For each HTML file (i.e. each page), I treated every **\<article\>** HTML element as one chunk available for matching. There are other ways of doing this. In general one should try several chunk sizes, with or without overlap, but in my case this did not make much sense: each page is independent of the others, and it would make no sense to split a single page. For this reason, each HTML page is its own chunk.
 
 To build the RAG system, I used `chromadb`:
 
@@ -33,7 +33,7 @@ This creates a database with the embeddings of the NumPy docs. We can then query
 collection.query(query_texts=["How to reshape an numpy array?"])
 ```
 
-For this example, the 5th result starts with `numpy.ndarray.reshape#\nmethod\nndarray.reshape(shape, /, *, order='C', copy=None)...`, which is exactly the function to use (https://numpy.org/devdocs/reference/generated/numpy.ndarray.reshape.html).
+For this example, the 5th result starts with `numpy.ndarray.reshape#\nmethod\nndarray.reshape(shape, /, *, order='C', copy=None)...`, which is exactly the [function to use](https://numpy.org/devdocs/reference/generated/numpy.ndarray.reshape.html).
 
 Under the hood, this uses a neural network (`all-MiniLM-L6-v2`) to project each chunk of text into a $384$-dimensional space that encapsulates, in some way, the meaning of the chunk. We do this for every chunk created while parsing the documentation, building a vector database that holds both the embedding and the text; this is done for performance, as the embedding of the documentation is computed only once. When we want to query for similar sentences, we embed the query and find which chunks of the vector database have the most similar embedding using the cosine distance, i.e. the "distance" is given by
 $$d_{q,v} = 1-\frac{\vec{e}_v \cdot \vec{e}_q}{|\vec{e}_v| |\vec{e}_q|}$$

@@ -187,7 +187,7 @@ class Autoencoder_005(nn.Module):
         return x
 ```
 
-## Patchcore (https://arxiv.org/abs/2106.08265)
+## [Patchcore](https://arxiv.org/abs/2106.08265)
 
 **Patchcore** - The idea between patchcore is to use a pre trained netwoork, e.g. `resnet50`, to generates new features about the input image using the intermediate representation of the image in its layers. The argument is that these intermediate layers that capture important abstract patterns/characteristics that better generalize for any object. With these features we construct a memory bank of the feature map of only the nominal data. When doing anomaly detection, we measure if that image feature bank is close to what we have in the memory bank and, if it is not, we signal it an anomaly. This algorithm also produces a segmentation map, i.e. it can locate where the anomaly is located.
 
