@@ -99,6 +99,9 @@ privatelinks:
 
 # Math rendering
 katex: true
+markdown: kramdown
+kramdown:
+  math_engine: katex
 
 # Exclude from processing
 exclude:
