@@ -22,7 +22,7 @@ Toggle between light and dark themes with a single click. Your preference is sav
 Your site looks great on all devices - phones, tablets, and computers. The design adapts automatically to different screen sizes.
 
 ## Math Support
-Write mathematical expressions using KaTeX. Use `$x = y$` for inline math and `$$\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}$$` for block equations.
+Write mathematical expressions using MathJax. Use `$x = y$` for inline math and `$$\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}$$` for block equations.
 
 ## Blog Integration
 Supports jekyll blog. Write chronological blog posts in the `_posts` folder and link them to your notes.

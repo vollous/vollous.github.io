@@ -98,10 +98,14 @@ privatelinks:
   msg: "This note hasn't been published yet."
 
 # Math rendering
-katex: true
+# Kramdown emits \( \) / \[ \] for $$...$$ math; single $...$ and final
+# rendering are handled client-side by MathJax 3 (see _layouts/Post.html).
+mathjax: true
 markdown: kramdown
 kramdown:
-  math_engine: katex
+  math_engine: mathjax
+
+
 
 # Exclude from processing
 exclude:

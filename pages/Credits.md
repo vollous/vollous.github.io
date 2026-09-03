@@ -22,7 +22,7 @@ The **[Team Obsidian](https://obsidian.md/)** deserves special recognition for c
 - **Highlight themes** from [Jekyll Pygment Themes](https://github.com/jwarby/jekyll-pygments-themes)
 - **[Jekyll](https://jekyllrb.com/)** - The static site generator that powers everything
 - **[Lunr.js](https://lunrjs.com/)** - Client-side search functionality
-- **[KaTeX](https://katex.org/)** - Math expression rendering
+- **[MathJax](https://www.mathjax.org/)** - Math expression rendering
 - **[Inter font](https://rsms.me/inter/)** - Typography by Rasmus Andersson
 
 ---

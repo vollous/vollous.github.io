@@ -34,8 +34,29 @@
     {%- else -%}
     <link href="{{ site.baseurl }}/assets/css/style.css" rel="stylesheet" media="all" class="default" />
     {%- endif -%}
-    {%- if site.katex -%}
-    <link href="{{ site.baseurl }}/assets/css/vendor/Katex.css" rel="stylesheet" media="all" class="default" />
+    {%- if site.mathjax -%}
+    <script>
+      // _plugins/obsidian_math.rb makes kramdown emit \( \) for $...$ (inline)
+      // and \[ \] for $$...$$ (always display). The $ / $$ entries are a
+      // fallback for when the plugin isn't run (e.g. GitHub's classic build).
+      window.MathJax = {
+        tex: {
+          inlineMath: [['\\(', '\\)'], ['$', '$']],
+          displayMath: [['\\[', '\\]'], ['$$', '$$']],
+          processEscapes: true
+        },
+        options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+          ignoreHtmlClass: 'highlight|highlighter-rouge'
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+    <style>
+      /* Let wide display equations scroll instead of overflowing the page */
+      mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+      mjx-container[display="true"] { padding-top: 0.2em; padding-bottom: 0.2em; }
+    </style>
     {%- endif -%}
 
     <!--[if IE]>
