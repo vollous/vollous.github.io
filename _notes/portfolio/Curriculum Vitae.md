@@ -24,7 +24,8 @@ This site documents my shift into data science/machine learning, which piqued my
 
 ## Languages
 
-Portuguese (native), English.
+- Portuguese (native)
+- English.
 
 ## Education
 
