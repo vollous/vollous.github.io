@@ -427,7 +427,7 @@ hr {
   padding: var(--space-sm) var(--space-md);
   margin-bottom: var(--space-md);
   background: var(--bg2);
-  transition: border-color 0.15s ease, transform 0.15s ease;
+  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .project-card > :last-child {
@@ -443,7 +443,8 @@ hr {
 
 .project-card:hover {
   border-color: var(--brand);
-  transform: translateY(-2px);
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 ul, ol {
