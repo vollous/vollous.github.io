@@ -3,7 +3,7 @@ layout: Post
 permalink: /
 ---
 
-<img src="/assets/img/profile.png" alt="Chico Viana" width="180" style="float: right; margin: 0 0 1rem 1.5rem; border-radius: 8px;" />
+<img src="/assets/img/profile.png" alt="Chico Viana" width="160" style="float: right; margin: 0 0 1rem 1.5rem; border-radius: 8px;" />
 
 I'm **Chico Viana**. I spent my PhD teaching computers to model the first
 fractions of a second of the universe; now I point the same curiosity and the
