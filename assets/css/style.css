@@ -421,15 +421,29 @@ hr {
 }
 
 .project-card {
+  position: relative;
   border: 1px solid var(--border);
   border-radius: 0.5rem;
   padding: var(--space-sm) var(--space-md);
   margin-bottom: var(--space-md);
   background: var(--bg2);
+  transition: border-color 0.15s ease, transform 0.15s ease;
 }
 
 .project-card > :last-child {
   margin-bottom: 0;
+}
+
+/* Stretch the project's wiki link over the whole card so it's all clickable */
+.project-card a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.project-card:hover {
+  border-color: var(--brand);
+  transform: translateY(-2px);
 }
 
 ul, ol {
