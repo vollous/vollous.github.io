@@ -68,7 +68,7 @@ Seven publications in total (full list in the PDF). The relevant one is
 
 which was made in an international collaboration to predict the evolution of the SARS-CoV-2 hospitalisations in Portugal. We used an MCMC algorithm to fit a master equation to the number of hospitalisations, which allowed us to estimate which groups were more vulnerable, the effects of vaccination and so on.
 
-The other two relevant publications are these
+The other two relevant publications are
 
 - P. Basler, L. Biermann, M. Mühlleitner, J. Müller, R. Santos, **J. Viana** — *BSMPT v3: A Tool for Phase Transitions and Primordial Gravitational Waves in Extended Higgs Sectors*, [arXiv:2404.19037](https://arxiv.org/abs/2404.19037) (2024).
 - M. Mühlleitner, J. Plotnikov, R. Santos, **J. Viana** — *A Deep Dive into Baryon Asymmetry — the C2HDM*, [arXiv:2606.04229](https://arxiv.org/abs/2606.04229) (2026). *(most recent)*
