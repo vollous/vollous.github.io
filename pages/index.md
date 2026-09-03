@@ -7,7 +7,7 @@ permalink: /
 
 <img class="hero-avatar" src="/assets/img/profile.jpeg" alt="Chico Viana" />
 
-# Chico Viana
+# João "Chico" Viana
 
 Data science & machine learning, with a physicist's habits.
 
