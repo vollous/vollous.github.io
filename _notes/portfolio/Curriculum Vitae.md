@@ -1,6 +1,6 @@
 ---
 title: Curriculum Vitae
-feed: show
+feed: hide
 date: 2026-09-03
 ---
 # Curriculum Vitae
