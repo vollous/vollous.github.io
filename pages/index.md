@@ -3,9 +3,17 @@ layout: Post
 permalink: /
 ---
 
-I'm **Chico Viana**. This site collects write-ups of my data science and machine
-learning projects — each one covers the full path from exploratory analysis
-through model selection to evaluation.
+<figure><img src="/assets/img/profile.png" alt="Chico Viana" width="180" /></figure>
+
+I'm **Chico Viana**. I spent my PhD teaching computers to model the first
+fractions of a second of the universe; now I point the same curiosity and the
+same numerical toolkit at data problems closer to home. I like the moment a
+messy dataset finally tells you something true — and I like being honest about
+how far the model can be trusted.
+
+This site collects write-ups of my data science and machine learning projects —
+each one covers the full path from exploratory analysis through model selection
+to evaluation.
 
 ## Projects
 
