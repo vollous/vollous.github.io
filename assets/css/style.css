@@ -356,23 +356,39 @@ a:hover {
   opacity: 0.85;
 }
 
-/* Floated portrait (CV) — text wraps around it */
+/* Portrait + intro (CV) — side by side, text keeps its own column */
+.cv-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+
+.cv-header > p:first-child {
+  flex: 0 0 auto;
+  margin: 0;
+}
+
 .cv-portrait {
-  float: left;
+  flex: 0 0 auto;
+  display: block;
   width: 200px;
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  margin: 0 var(--space-md) var(--space-sm) 0;
+  margin: 0;
   border: 3px solid var(--bg2);
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 480px) {
-  .cv-portrait {
-    float: none;
-    display: block;
-    margin: 0 auto var(--space-md);
+.cv-intro > :last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .cv-header {
+    flex-direction: column;
+    align-items: center;
   }
 }
 

@@ -4,7 +4,11 @@ feed: hide
 date: 2026-09-03
 ---
 
+<div class="cv-header" markdown="1">
+
 <img class="cv-portrait" src="/assets/img/profile.jpeg" alt="Chico Viana" />
+
+<div class="cv-intro" markdown="1">
 
 I'm **João "Chico" Viana**, a particle-physics researcher at the Faculdade
 de Ciências da Universidade de Lisboa. My PhD thesis is submitted and I'm
@@ -13,6 +17,10 @@ awaiting the defence. My day-to-day work is heavy scientific computing, large pa
 This site documents my shift into data science/machine learning, which piqued my interest in recent years with the rise of the transformer and other architectures. My main interests are building highly reliable systems/models that are able to run without many resources. Here I present personal projects that showcase my skills in computing and data science/machine learning.
 
 [**Download the full CV (PDF)**](/assets/Curriculum_Vitae_Joao_Viana.pdf)
+
+</div>
+
+</div>
 
 ## Languages
 
