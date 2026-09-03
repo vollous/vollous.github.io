@@ -26,23 +26,19 @@ it.
 ## Computational & technical skills
 
 - **Python** for scientific computing and data analysis; **C++** for performance-critical code.
-- Numerical methods: root finding, ODE/PDE integration, Monte-Carlo and large-scale parameter scans, bounce-action computation.
-- Boltzmann / transport equations, finite-temperature quantum field theory, renormalization.
-- Version control with Git and GitHub; collaborative workflows (branching, pull requests, code review).
-- CI/CD with GitHub Actions — automated testing, builds and deployments; reproducible, containerised workflows with Docker and Docker Compose.
+- Numerical methods: root finding, ODE/PDE integration, Monte-Carlo and large-scale parameter scans.
+- Boltzmann/transport equations and finite-temperature quantum field theory.
+- Git, GitHub Actions CI/CD, and containerised workflows with Docker.
 
 ## Machine learning & data science
 
-Skills below are drawn from the project write-ups on this site; **ML4Physics @
-Ljubljana** school covered machine-learning methods for physics data.
+From the project write-ups on this site, plus the **ML4Physics @ Ljubljana** school.
 
-- **Languages & libraries:** Python, PyTorch, scikit-learn, pandas, NumPy, Matplotlib.
-- **Data preparation:** exploratory data analysis, correlation analysis, ordinal and one-hot encoding, feature engineering, distribution fitting, log/`log1p` transforms, statistical outlier detection (binomial test, *p*-values, look-elsewhere correction).
-- **Modelling:** linear/ridge regression, KNN, random forests, gradient-boosted trees, SVM/SVR, feed-forward neural networks (AdamW, dropout); feature selection with `RFECV` and tree-based importance combined by ensemble voting; hyperparameter grid search with k-fold cross-validation.
-- **Evaluation:** RMSE, MAPE, ROC/AUC, precision/recall/F1, confusion matrices; decision-threshold tuning to hit a target recall on a minority class.
-- **Computer vision:** convolutional autoencoders (custom architectures) and PatchCore for zero-shot / unsupervised anomaly detection; transfer learning from pretrained CNN backbones (ResNet-50, Wide-ResNet-50), coreset subsampling, KNN anomaly scoring, segmentation maps.
-- **LLMs & RAG:** retrieval-augmented generation with sub-1B locally-served models (Ollama), ChromaDB vector store, sentence-transformer embeddings and cosine-similarity retrieval, document parsing and chunking (BeautifulSoup), prompt design.
-- **Engineering & deployment:** async REST APIs with FastAPI, Streamlit front-ends, multi-container deployments with Docker and Docker Compose.
+- **Tools:** Python, PyTorch, scikit-learn, pandas, NumPy, Matplotlib.
+- **Tabular ML:** end-to-end pipelines — EDA and feature engineering, model selection across linear models, tree ensembles and neural nets, cross-validated hyperparameter search, and evaluation with decision-threshold tuning for imbalanced classes.
+- **Computer vision:** unsupervised anomaly detection with convolutional autoencoders and PatchCore, using transfer learning from pretrained CNN backbones.
+- **LLMs & RAG:** retrieval-augmented generation with locally-served models (Ollama), ChromaDB vector store, and sentence-transformer embeddings.
+- **Deployment:** FastAPI services and Streamlit front-ends, containerised with Docker Compose.
 
 ## Scientific software
 
