@@ -9,13 +9,9 @@ permalink: /
 
 # João "Chico" Viana
 
-Data science & machine learning, with a physicist's habits.
+Data science & machine learning, with a physicist's touch.
 
-I spent my PhD teaching computers to model the first fractions of a second of
-the universe; now I point the same curiosity and the same numerical toolkit at
-data problems closer to home. I like the moment a messy dataset finally tells
-you something true — and I like being honest about how far the model can be
-trusted.
+I spent my PhD teaching computers to describe the universe's first fractions of a second. Now I point the same curiosity and the same numerical toolkit at data problems closer to home. My goal is to design and train highly efficient models that run reliably on limited resources.
 
 <span class="hero-actions">
 <a class="btn btn-brand" href="{{ site.baseurl }}/notes/curriculum-vitae">Curriculum Vitae</a>
