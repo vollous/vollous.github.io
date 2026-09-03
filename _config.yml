@@ -24,7 +24,7 @@
 # Preferences (controls template behavior)
 preferences:
   homepage:
-    enabled: false
+    enabled: true
   search:
     enabled: true
   backlinks:
@@ -35,9 +35,9 @@ preferences:
     enabled: true
 
 # Site Configuration
-title: "Your Site Title"
-heading: "Your Name"
-description: "A brief description of your site"
+title: "Chico Viana"
+heading: "Chico Viana"
+description: "Data science and machine learning project write-ups by Chico Viana."
 url: "https://vollous.github.io"
 baseurl: ""
 
@@ -48,16 +48,14 @@ ie_css: "/assets/css/ie-target.css"
 
 # Menu Items
 menu:
-  - title: "Notes"
+  - title: "Projects"
     url: "/notes"
-  - title: "Blog"
-    url: "/blog"
   - title: "About"
     url: "/about"
 
 # Footer
 footer:
-  copyright: "© 2024 Your Name. Contents under CC-BY-NC"
+  copyright: "© 2026 Chico Viana. Contents under CC-BY-NC"
   credits:
     enabled: true
     url: "/credits"
@@ -111,6 +109,12 @@ kramdown:
 exclude:
   - Gemfile
   - Gemfile.lock
+  - README.md
+  - LICENSE
+  - Dockerfile
+  - docker-compose.yml
+  - blog.code-workspace
+  - mise.toml
   - node_modules
   - vendor/bundle/
   - vendor/cache/

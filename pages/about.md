@@ -7,4 +7,13 @@ permalink: /about
 
 # About
 
-Jekyll Garden is a clean, minimal Jekyll theme designed to make publishing your Obsidian vault as a static website incredibly easy. It bridges the gap between private knowledge management and public sharing, allowing you to create a digital garden where your notes are interconnected through wiki-style links and easily discoverable through search. 
+I'm **Chico Viana**. This site is a portfolio of my data science and machine
+learning work — self-contained project write-ups that walk through the data,
+the modelling choices, and how the results were evaluated.
+
+Topics so far span tabular modelling (regression and imbalanced classification
+with threshold tuning), computer-vision anomaly detection (convolutional
+autoencoders and PatchCore), and retrieval-augmented generation with small,
+locally-served LLMs.
+
+The source for this site lives on [GitHub](https://github.com/vollous).

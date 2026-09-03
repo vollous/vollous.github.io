@@ -5,19 +5,19 @@ date: 2026-09-03
 ---
 # Project RAG
 
-In this project, I wanted to use a very small LLM, sub 1b parameters, to build a **numpy** RAG powered assistance. 
+In this project, I wanted to take a very small LLM, sub 1B parameters, and boost its performance with a RAG system. I chose to work in the context of the **NumPy** documentation, since it contains many details, arguments and functions, so a small LLM is prone to hallucinating about it.
 
-The LLM I decided to use is `ibm-granite/granite-4.0-h-350m` (https://huggingface.co/ibm-granite/granite-4.0-h-350m) which has only 350m parameters. This LLM is so lightweight that can run on my system at incredible speeds, and also supports parallel calls on the same `ollama serve`. This LLM is so small that it does not have much knowledge, this will make the difference between the normal chat and RAG chat more noticeable. Of course, for a production project one should use the best LLM available.
+The LLM I decided to use is `ibm-granite/granite-4.0-h-350m` (https://huggingface.co/ibm-granite/granite-4.0-h-350m), which has only 350M parameters. It is so lightweight that it runs on my machine at incredible speed, and it also supports parallel calls on a single `ollama serve`. Because the model is so small, it does not hold much knowledge, which makes the difference between the plain chat and the RAG-powered chat more noticeable. For a production project one should, of course, use the best LLM available.
 
-The RAG system I used was the default `chromadb` (https://www.trychroma.com/home) using the default sentence transformer `sentence-transformers/all-MiniLM-L6-v2`.
+The RAG system I used is the default `chromadb` (https://www.trychroma.com/home) with the default sentence transformer `sentence-transformers/all-MiniLM-L6-v2`.
 
-In order for the project to be *scalable*, everything was setup using docker containers (frontend, backend, ollama) and simultaneous brought to life using docker compose. The frontend and backend containers interact using REST API which was create using `fastapi`. The frontend was designed using `streamlit`. The LLM can be provided by `ollama` running on a Docker container, or on the host `ollama` server (for macos Docker cannot use metal inside Docker container); we could also use a cloud LLM provider, such as ChatGPT or Claude, but we chose not to so that everything runs locally.
+To keep the project *scalable*, everything was set up with Docker containers (frontend, backend, ollama) and brought up together with Docker Compose. The frontend and backend communicate through a REST API built with `fastapi`. The frontend was built with `streamlit`. The LLM can be served either by an `ollama` instance running in a Docker container or by the `ollama` server on the host (on macOS, Docker cannot use Metal inside a container); we could also use a cloud LLM provider such as ChatGPT or Claude, but we chose not to so that everything runs locally.
 
-# Get the context
+# Getting the context
 
-To build the RAG system, one needs additional information to provide as context to the LLM. For that, I download the entire **numpy 2.5** documentation (https://numpy.org/doc/2.5/numpy-html.zip). Extracted it and parsed it using the **BeautifulSoup** package. For each HTML file (for each page), I considered each **\<article\>** HTML object to be one chunck available for matching. There are other ways of doing this. In general one should try some chunking sizes with/without overlap bu, for my case this did not make much sense as each page is independent of other pages; and it would make no sense to split one of these pages. For this reason, each HTML page has its one chunck.
+To build the RAG system, we need extra information to provide as context to the LLM. For that, I downloaded the entire **NumPy 2.5** documentation (https://numpy.org/doc/2.5/numpy-html.zip), extracted it and parsed it with the **BeautifulSoup** package. For each HTML file (i.e. each page), I treated every **\<article\>** HTML element as one chunk available for matching. There are other ways of doing this. In general one should try several chunk sizes, with or without overlap, but in my case this did not make much sense: each page is independent of the others, and it would make no sense to split a single page. For this reason, each HTML page is its own chunk.
 
-To build the RAG system, I used `chromabd`
+To build the RAG system, I used `chromadb`:
 
 ``` python
 import chromadb
@@ -28,23 +28,23 @@ collection = chroma_client.get_or_create_collection(name="numpy_docs")
 collection.add(ids=ids, documents=documents, metadatas=metadatas)
 ```
 
-This command creates a database with the embedding of the numpy docs. Then we can query other string and check if any similar/relevant sentences appear in the docs using this command
+This creates a database with the embeddings of the NumPy docs. We can then query with another string and check whether any similar or relevant sentences appear in the docs:
 
 ``` python
 collection.query(query_texts=["How to reshape an numpy array?"])
 ```
 
-For this example, the 5th results starts with `numpy.ndarray.reshape#\nmethod\nndarray.reshape(shape, /, *, order='C', copy=None)...` which is the correct function to be used (https://numpy.org/devdocs/reference/generated/numpy.ndarray.reshape.html).
+For this example, the 5th result starts with `numpy.ndarray.reshape#\nmethod\nndarray.reshape(shape, /, *, order='C', copy=None)...`, which is exactly the function to use (https://numpy.org/devdocs/reference/generated/numpy.ndarray.reshape.html).
 
-Under the hood, this uses a neural network (`all-MiniLM-L6-v2`) to project each chunck of text into a $384$ dimensional space which will encapsulate, in some way, the meaning of the chunck of text. We do this to all chuncks created during the parsing of the documentation to build a vector database, where we have the embedding and the text, this is done to increase performance as we only calculate the embedding of the documentation once. When we want to query for similar sentences, we embed our query and find which chuncks of the vector database have the most similar embedding using the cossine distance, i.e. the "distance" is given by
+Under the hood, this uses a neural network (`all-MiniLM-L6-v2`) to project each chunk of text into a $384$-dimensional space that encapsulates, in some way, the meaning of the chunk. We do this for every chunk created while parsing the documentation, building a vector database that holds both the embedding and the text; this is done for performance, as the embedding of the documentation is computed only once. When we want to query for similar sentences, we embed the query and find which chunks of the vector database have the most similar embedding using the cosine distance, i.e. the "distance" is given by
 $$d_{q,v} = 1-\frac{\vec{e}_v \cdot \vec{e}_q}{|\vec{e}_v| |\vec{e}_q|}$$
-where $\vec{e}_v$ is the embedding of each chunck in the vector database and $\vec{e}_q$ is the embedding of the query. For this project, add to the LLM context the top 10 embedding with the lowest $d_{q,v}$. This number can be fine-tuned for each project. If the RAG system failed to retrieve any relevant chuncks, the LLM was instructed not to answer, although sometimes it fails to do so.
+where $\vec{e}_v$ is the embedding of each chunk in the vector database and $\vec{e}_q$ is the embedding of the query. For this project, we add to the LLM context the 10 chunks with the lowest $d_{q,v}$. This number can be tuned per project. If the RAG system fails to retrieve any relevant chunk, the LLM is instructed not to answer, although sometimes it does so anyway.
 
-Additional layers to the stack can be added, such as a reranker that looks at the retrieved chuncks and looks for the most relevant ones. These rerankers are considerable slower than these sentence transformers that typical RAG systems use, but are fast enough to be used on the $N$-top results of the RAG. A reranker was beyond the scope of this project.
+Additional layers can be added to the stack, such as a reranker that inspects the retrieved chunks and picks the most relevant ones. Rerankers are considerably slower than the sentence transformers that typical RAG systems use, but they are fast enough to run on the top-$N$ results of the RAG. A reranker was beyond the scope of this project.
 
 # Backend
 
-The backend was built using `fastapi` and `chromadb`, as was designed to work asynchronously, i.e. it can handle multiple requests at the same time. I opened POST method that takes as input a class
+The backend was built with `fastapi` and `chromadb`, and was designed to work asynchronously, i.e. it can handle multiple requests at the same time. I exposed a POST endpoint that takes as input the class
 
 ``` python
 class Query(BaseModel):
@@ -52,32 +52,27 @@ class Query(BaseModel):
     rag: str
 ```
 
-where `messages` is the list of messages and `rag` is a boolean that determines if the chat will RAG powered or not. I selected that only first chat message can be passed to the RAG model to give some context. Follow up messages will be answered only using the available context, i.e. the conversation + initial RAG context.
+where `messages` is the list of messages and `rag` is a boolean that determines whether the chat will be RAG-powered or not. Only the first chat message is passed to the RAG model to provide context. Follow-up messages are answered using only the available context, i.e. the conversation plus the initial RAG context.
 
 # Frontend
 
-The frontend was designed using `streamlit`, based on a [AI chat streamlit example](https://github.com/streamlit/demo-ai-assistant). The page starts with a single input textbox that query both LLMs, we also provide a few suggestions to ask the LLM.
+The frontend was built with `streamlit`, based on an [AI chat Streamlit example](https://github.com/streamlit/demo-ai-assistant). The page starts with a single input textbox that queries both LLMs, and we provide a few suggestions of questions to ask.
 
-<figure>
-<img
-src="{{ site.baseurl }}/notes/36a03ffd5fedf4e3744cec52a2475ea854d4a8a0.png"
-class="wikilink" alt="Pastedimage20260903135213.png" />
-<figcaption
-aria-hidden="true">Pastedimage20260903135213.png</figcaption>
-</figure>
+![[36a03ffd5fedf4e3744cec52a2475ea854d4a8a0.png]]
 
-After the first query, the LLM answers the question using its knowledges and using the RAG context. The page is spit into two, where the user can continue the discussing which any of the two chats. Two buttons are provided. The `Restart` button resets both chats, the `Show context` button show which context was given to the LLM, this might help troubleshoot some issues with the LLMs.
-\# Docker
+After the first query, each LLM answers the question, one using only its own knowledge and the other using the RAG context. The page then splits into two, and the user can continue the conversation with either chat. Two buttons are provided: the `Restart` button resets both chats, and the `Show context` button shows which context was given to the LLM, which can help troubleshoot issues with the models.
 
-I designed this project also to showcase my abilities to make a production project. For that reason, this project was split into three containers
+# Docker
 
-- Ollama container - Runs the LLM.
-- Backend container - Contains the `fastapi` and `chromadb`.
-- Frontend container - Has the `streamlit` front end
+I also designed this project to showcase my ability to build a production-style deployment. For that reason, the project is split into three containers:
 
-The backend and frontend interact only via HTTP REST API. The backend and the ollama container interact using the `ollama` package that uses REST API under the hood aswell. The frontend and the ollama container to not interact at all.
+- Ollama container - runs the LLM.
+- Backend container - contains `fastapi` and `chromadb`.
+- Frontend container - hosts the `streamlit` frontend.
 
-To orchestrate everything, we use `docker compose`, the YAML file used is
+The backend and frontend interact only over an HTTP REST API. The backend and the ollama container interact through the `ollama` package, which also uses a REST API under the hood. The frontend and the ollama container do not interact at all.
+
+To orchestrate everything we use `docker compose`; the YAML file is
 
 ``` yml
 services:
@@ -91,39 +86,22 @@ services:
     image: numpyragbackend:latest
 ```
 
-where we only published port `8080` on the host machine so that the backend/ollama is completely isolated from external interference.
-\# Results
+where only port `8080` is published on the host machine, so that the backend and ollama are completely isolated from external interference.
 
-In this first image I ask what are the option for the `density` flag of the numpy histogram, which can either be `True` or `False`. The RAG powered chat provides the correct answer while the normal chat hallucinates.
+# Results
 
-<figure>
-<img
-src="{{ site.baseurl }}/notes/cd8bba5f342bdd6ac63edec6d727220fdc0e7478.png"
-class="wikilink" alt="Pastedimage20260903135306.png" />
-<figcaption
-aria-hidden="true">Pastedimage20260903135306.png</figcaption>
-</figure>
+In this first image I ask what the options are for the `density` flag of the NumPy histogram, which can be either `True` or `False`. The RAG-powered chat gives the correct answer while the plain chat hallucinates.
 
-In this second example, we can see the knowledge limitations that the small LLM has, as it does not know that the Chebyshev polynomials fit is already implemented in numpy, as instead provides a much more cumbersome answer.
+![[cd8bba5f342bdd6ac63edec6d727220fdc0e7478.png]]
 
-<figure>
-<img
-src="{{ site.baseurl }}/notes/bc7f3fbd8a7421ebd6b2f7b455b76548d1aab922.png"
-class="wikilink" alt="Pastedimage20260903135423.png" />
-<figcaption
-aria-hidden="true">Pastedimage20260903135423.png</figcaption>
-</figure>
+In this second example, we can see the knowledge limitations of the small LLM: it does not know that Chebyshev polynomial fitting is already implemented in NumPy, and instead provides a much more cumbersome answer.
 
-In the third example, the LLM refuses to answer the questions as it is beyond the scope of its knowledge.
+![[bc7f3fbd8a7421ebd6b2f7b455b76548d1aab922.png]]
 
-<figure>
-<img
-src="{{ site.baseurl }}/notes/4c5cc6b249c07770b600fd77ae28455fece6d25f.png"
-class="wikilink" alt="Pastedimage20260903135326.png" />
-<figcaption
-aria-hidden="true">Pastedimage20260903135326.png</figcaption>
-</figure>
+In the third example, the LLM refuses to answer the question because it is beyond the scope of its knowledge.
+
+![[4c5cc6b249c07770b600fd77ae28455fece6d25f.png]]
 
 # Conclusions
 
-Of course, this RAG is an overkill as a decent sized LLM likely has the knowledge to answer these questions about numpy. Nevertheless, similar implementations can be used for internal company documentation, client assistance chat bot, etc.
+This RAG system is, of course, overkill: a decent-sized LLM most likely already knows enough to answer these NumPy questions. Nevertheless, similar implementations can be used for internal company documentation, customer support chatbots, and so on.

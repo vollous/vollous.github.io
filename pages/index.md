@@ -1,12 +1,21 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: Post
 permalink: /
-title: Jekyll Garden
 ---
 
-Portfolio do Chico Jekyll Garden is a simple theme that turns your Obsidian notes into a beautiful website. If you use Obsidian for note-taking, this theme makes it easy to publish your markdown files as a connected website with wiki-style links and full-text search.
+I'm **Chico Viana**. This site collects write-ups of my data science and machine
+learning projects — each one covers the full path from exploratory analysis
+through model selection to evaluation.
 
-Start by reading [[Getting Started]] to set up your own Jekyll Garden. Learn how to use [[Wiki Links]] to connect your notes, explore the [[Markdown Guide]] for formatting, and customize your site with the [[Customization]] guide. When you're ready to share your notes online, follow the [[Deployment]] instructions.
+## Projects
+
+- [[Impact of AI on Students]] — EDA, regression on post-semester GPA, and
+  threshold-tuned classification of burnout risk on a synthetic Kaggle dataset.
+- [[Anomaly detection on the MVTec AD database]] — zero-shot defect detection
+  comparing convolutional autoencoders against PatchCore.
+- [[Numpy RAG powered assistant]] — a sub-1B-parameter LLM boosted with a
+  ChromaDB retrieval layer over the NumPy documentation, deployed with Docker
+  Compose.
+
+Browse everything under [Projects]({{ site.baseurl }}/notes), or read more
+[about me]({{ site.baseurl }}/about).
