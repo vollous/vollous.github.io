@@ -41,11 +41,11 @@ Some of the columns have **Categorical data** which has to be converted to numbe
 
 Here I show a scatter plot of all the data, the diagonal plots have the distributions of the data
 
-![[274359e43eee2f97411114ef97b006862d06af79.png]]
+![[274359e43eee2f97411114ef97b006862d06af79.png|600]]
 
 The correlation matrix of all the data is
 
-![[b0724d6b0758bd4ebc94386d45adf83015df9d92.png]]
+![[b0724d6b0758bd4ebc94386d45adf83015df9d92.png|600]]
 
 ## `Post_Semester_GPA`
 
@@ -63,32 +63,32 @@ After some trial and error, it become obvious that the data has some weird exces
 
 The first excess appeared in `Weekly_GenAI_Hours`. In a semi-log historgram, we have
 
-![[346f004a447305d69a03b1ea43fe80afd7d68b2b.png]]
+![[346f004a447305d69a03b1ea43fe80afd7d68b2b.png|500]]
 
 where we can see $4$ weird excesses at `Weekly_GenAI_Hours`\> 30. The bin count also seem linear, so we suspect that this distribution is an exponential distribution. After doing an exponential fit, we determined that its distribution function is approximately
 
 $$p(x) = \frac{1}{8.4277522}e^{-x/8.4277522},$$
-To calculate the locations of the excesses, we calculated the expected number of count per bin. (of the historgram) and performed a binomical test to calculate the $p$-value. The bin $p$-value is ![[0a9250403ac1d20eeee568b2f51783319fd738a1.png]]
+To calculate the locations of the excesses, we calculated the expected number of count per bin. (of the historgram) and performed a binomical test to calculate the $p$-value. The bin $p$-value is ![[0a9250403ac1d20eeee568b2f51783319fd738a1.png|500]]
 where we can clearly see four large excesses. The red line is $p$-value \< 0.05 (accounting for the look elsewhere effect of having $300$ bins).
 
 We found that excesses were exactly when `Weekly_GenAI_Hours` = $34$, $36$, $38$ and $40$, so these points were removed.
 
 Its exponential distribution also makes some models fit worse, so we applied a $x \to \log(1 + x)$ transform to it. The final distribution is
 
-![[8a4ba93d81e62933bcfecc971f9c191e3c3eb7f2.png]]
+![[8a4ba93d81e62933bcfecc971f9c191e3c3eb7f2.png|500]]
 
 ### Excess in `Traditional_Study_Hours`
 
 There is also a very large excess at `Traditional_Study_Hours` exactly $1$.
 
-![[a168523e781c1d01afb70247b2f450c6083fef33.png]]
+![[a168523e781c1d01afb70247b2f450c6083fef33.png|500]]
 
 These points look like a relic from the data being synthetic and a lower bound being imposed on `Traditional_Study_Hours`. So we removed them.
 \### Excess in `Skill_Retention_Score`
 
 There is also a very large excess at `Skill_Retention_Score` exactly $100$.
 
-![[90cc12e6d3f9bb528d9a9b2b1cb8358b77c80c78.png]]
+![[90cc12e6d3f9bb528d9a9b2b1cb8358b77c80c78.png|500]]
 
 These points look like a relic from the data being synthetic and a upper bound being imposed on `Skill_Retention_Score`. So we removed them.
 
@@ -96,15 +96,15 @@ These points look like a relic from the data being synthetic and a upper bound b
 
 Making a scatter plot of `Pre_Semester_GPA` vs `Post_Semester_GPA` shows a very clear linear relation. The diagonal line is $y=x$ and as most of the points are above the curve, shows that `Post_Semester_GPA > Pre_Semester_GPA`, so the grades improved.
 
-![[91c71c32d7f24cddd8f904f47d476f12095d2f4d.png]]
+![[91c71c32d7f24cddd8f904f47d476f12095d2f4d.png|500]]
 
 Showing a plot of `Pre_Semester_GPA` vs `Diff_GPA_Relative`, and a red line $y=0$. We can see that `Diff_GPA_Relative`is mostly positive, so grades improved. It also has a very tine downard trend, which indicates that, the higher your `Pre_Semester_GPA`, the less you improved. This is a consequence of the upper bound at $4$, and the fact that it gets harder and harder to improve. Still, this effect if very small.
 
-![[84ee2c837283e39faa9f033b58013f264c13914b.png]]
+![[84ee2c837283e39faa9f033b58013f264c13914b.png|500]]
 
 Showing the scatter plot of `Traditional_Study_Hours`vs `Diff_GPA_Relative`, we see an upwards trend. And it shows a correlation where, the more you study the more your grades increase, which is intuitive.
 
-![[e496f83b3dc3b2d614c9aca9a3fbf26976df066b.png]]
+![[e496f83b3dc3b2d614c9aca9a3fbf26976df066b.png|500]]
 
 ## EPA on `Burnout_Risk_Level`
 
@@ -120,7 +120,7 @@ so the class are more of less balanced.
 
 In the following plot, I show an histogram of `Diff_GPA_Relative` grouped by `Burnout_Risk_Level`. We can see no big difference between the `Burnout_Risk_Level`. I checked other features and non produced any clear trend.
 
-![[6357775e01124c2f87bd8dcb23f9c11b2d4953d2.png]]
+![[6357775e01124c2f87bd8dcb23f9c11b2d4953d2.png|500]]
 
 # Predicting `Post_Semester_GPA` (regression)
 

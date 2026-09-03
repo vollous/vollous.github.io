@@ -27,16 +27,16 @@ Due to computational and time limitations, I will only focus on three categories
 
 - bottle - circular symmetry, all `train`images are very similar
 
-![[0d53fefd58e59e2f2b6a3e9fe510c2d82e168bb7.png]]
+![[0d53fefd58e59e2f2b6a3e9fe510c2d82e168bb7.png|400]]
 
 - carpet - translational invariance and same pattern with slightly different thread colours
 
-![[a08db728849ec2e11b919d4297a17a7378a0e1d9.png]]
+![[a08db728849ec2e11b919d4297a17a7378a0e1d9.png|400]]
 
 - hazelnut - similar object rotated around, i.e. orientation is random
 
-![[bcb9ab83b421c488a71c01a5565de680a107f178.png]]
-\# Methods
+![[bcb9ab83b421c488a71c01a5565de680a107f178.png|400]]
+# Methods
 
 I will try to find the anomalies using two, quite different, algorithsm, which are **Convolutional Auto encoders (CAE)** and **Patchcore**. As we will soon see, CAE perform particularly bad in this dataset and patchcore shows amazing results. If needs be, we will select the threshold that maximizes the `f1_score`.
 
@@ -203,7 +203,7 @@ My first attempt was to use MLP auto encoders but, for the `bottle` dataset wher
 
 The loss function of each model clearly shows that we should have trained for longer, as loss is still decreasing.
 
-![[147c7ca1aad3a942b5e01addbfcb03f9cbb13f9d.png]]
+![[147c7ca1aad3a942b5e01addbfcb03f9cbb13f9d.png|500]]
 
 By analysing the AUC of the ROC, we see that we `Autoencoder_002` reaches `AUC = 0.8`.
 
@@ -218,7 +218,7 @@ By analysing the AUC of the ROC, we see that we `Autoencoder_002` reaches `AUC =
 
 It is curious to note that `Autoencoder_002` is not the model with the lowest loss, which signals that the loss function but not be a good indicator for a good anomaly detector. The reason is that it does not really matter if the model can reconstruct the image, it only matter if it was a difference performance reconstructing anomalous data compared to nominal data.
 
-![[d135b52da3edfe3b28ea2d06c68958acb6eb5553.png]]
+![[d135b52da3edfe3b28ea2d06c68958acb6eb5553.png|500]]
 
 I will also show the image, the reconstructed image and the difference for an anomalous picture.
 
@@ -270,7 +270,7 @@ which interestingly, has a smaller memory bank compared to the other models. It 
 
 The loss function of each model clearly shows that we should have trained for longer, as loss is still decreasing.
 
-![[477b1b99e8d67ee8a82ce289fa4c3edaf7255729.png]]
+![[477b1b99e8d67ee8a82ce289fa4c3edaf7255729.png|500]]
 
 I will show now, the `AUC` for each model
 
@@ -287,7 +287,7 @@ and we can see that all of them are less than $0.5$ (random chance), and that mo
 
 Showing the `ROC` curve of the *best* performing model, `Autoencoder_003`, shows that for most threshold values, it would be better to go against the model (or flip a coin). For some threshold values, this model is very slightly better than flipping a coin.
 
-![[97411d62c7abedf544ac21bf7adb01d1ff673f7a.png]]
+![[97411d62c7abedf544ac21bf7adb01d1ff673f7a.png|500]]
 
 I will also show the image, the reconstructed image and the difference for an anomalous picture.
 
@@ -343,7 +343,7 @@ which has a lower `AUC` ($0.94 \to 0.87$) but it many times faster at inference.
 
 The loss function of each model clearly shows that we should have trained for longer, as loss is still decreasing.
 
-![[d6231d4e0e9396a9a39110e652c088ae39b0a06c.png]]
+![[d6231d4e0e9396a9a39110e652c088ae39b0a06c.png|500]]
 
 I will show now, the `AUC` for each model
 
@@ -360,7 +360,7 @@ where we get decent `AUC`. The best model `Autoencoder_004` reaches `AUC = 0.88`
 
 Showing the `ROC` curve of the *best* performing model, `Autoencoder_004`, shows that the model performs quite well.
 
-![[f1019bdcb6299a6ac5a99a14f3fb5d5b6d901c33.png]]
+![[f1019bdcb6299a6ac5a99a14f3fb5d5b6d901c33.png|500]]
 
 I will also show the image, the reconstructed image and the difference for an anomalous picture.
 

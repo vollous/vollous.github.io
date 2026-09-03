@@ -4,6 +4,8 @@
 #
 #     ![[some-image.png]]
 #     ![[some-image.png|alt text]]
+#     ![[some-image.png|300]]            # 300px wide
+#     ![[some-image.png|alt text|300]]   # alt text + 300px wide
 #
 # instead of hand-written <figure><img> blocks. Media files can live anywhere
 # under _notes/ (e.g. `_notes/portfolio/Project RAG-media/foo.png`); the `notes`
@@ -25,9 +27,20 @@ module ObsidianEmbeds
 
       next Regexp.last_match(0) unless IMAGE_EXT.include?(File.extname(base).downcase)
 
-      alt = (label || File.basename(base, ".*")).strip
+      # Obsidian allows `alt|width` or `alt|widthxheight` (or just a bare size).
+      parts  = (label || "").split("|").map(&:strip)
+      size   = parts.pop if parts.last =~ /\A\d+(?:x\d+)?\z/
+      alt    = parts.join(" ")
+      alt    = File.basename(base, ".*") if alt.empty?
+
+      dims = ""
+      if size
+        w, h = size.split("x")
+        dims = %( width="#{w}") + (h ? %( height="#{h}") : "")
+      end
+
       # Blank lines keep kramdown from folding adjacent text into the HTML block.
-      %(\n\n<figure><img src="#{baseurl}/notes/#{base}" alt="#{alt}" /></figure>\n\n)
+      %(\n\n<figure><img src="#{baseurl}/notes/#{base}" alt="#{alt}"#{dims} /></figure>\n\n)
     end
   end
 end
