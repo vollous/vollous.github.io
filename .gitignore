@@ -3,5 +3,6 @@ _site
 .jekyll-cache
 .jekyll-metadata
 vendor
-assets/
 _notes/portfolio/.obsidian/
+.DS_Store
+assets/img/*-how-to.png
