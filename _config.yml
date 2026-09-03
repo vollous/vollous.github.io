@@ -42,7 +42,7 @@ url: "https://vollous.github.io"
 baseurl: ""
 
 # Asset Configuration
-apple_touch_icon: "/assets/img/profile.png"
+apple_touch_icon: "/assets/img/profile.jpeg"
 css_file: "/assets/css/style.css"
 ie_css: "/assets/css/ie-target.css"
 
@@ -50,8 +50,6 @@ ie_css: "/assets/css/ie-target.css"
 menu:
   - title: "Projects"
     url: "/notes"
-  - title: "About"
-    url: "/about"
 
 # Footer
 footer:

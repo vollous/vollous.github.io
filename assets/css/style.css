@@ -254,6 +254,108 @@ a:hover {
   color: var(--bg);
 }
 
+.btn-ghost {
+  background: transparent;
+  color: var(--title);
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+
+.btn-ghost:hover {
+  background: var(--bg2);
+  color: var(--title);
+}
+
+/* Home hero */
+.hero {
+  text-align: center;
+  padding-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-avatar {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto var(--space-md);
+  border: 3px solid var(--bg2);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+}
+
+.hero h1 {
+  margin-bottom: var(--space-xs);
+}
+
+.hero h1 + p {
+  color: var(--title);
+  font-weight: var(--weight-bold);
+  font-size: var(--scale-lg);
+  margin-bottom: var(--space-md);
+}
+
+.hero p {
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-actions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+  margin-top: var(--space-xs);
+}
+
+.hero-actions .btn {
+  margin-right: 0;
+}
+
+.section-intro {
+  margin-top: calc(-1 * var(--space-xs));
+  font-size: var(--scale-sm);
+  opacity: 0.85;
+}
+
+/* Project cards */
+.project-card h3 {
+  margin: 0 0 var(--space-xs);
+  font-size: var(--scale-lg);
+}
+
+.project-card h3 a {
+  color: var(--title);
+  text-decoration: none;
+  border-bottom: none;
+  transition: color 0.15s ease;
+}
+
+.project-card:hover h3 a {
+  color: var(--brand);
+}
+
+.project-card p {
+  margin-bottom: 0;
+  font-size: var(--scale-sm);
+  line-height: 1.6;
+}
+
+.more-link {
+  margin-top: var(--space-lg);
+}
+
+.more-link a {
+  color: var(--brand);
+  text-decoration: none;
+  font-weight: var(--weight-bold);
+  font-size: var(--scale-sm);
+}
+
+.more-link a:hover {
+  text-decoration: underline;
+}
+
 .note-list-sec {
   margin-top: var(--space-xl);
 }
