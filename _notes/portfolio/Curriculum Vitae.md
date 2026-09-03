@@ -7,10 +7,10 @@ date: 2026-09-03
 <img class="cv-portrait" src="/assets/img/profile.jpeg" alt="Chico Viana" />
 
 I'm **João "Chico" Viana**, a particle-physics researcher at the Faculdade
-de Ciências da Universidade de Lisboa, my PhD thesis is submitted and I'm
-awaiting the defence. My day-to-day work is heavy scientific computing, large parameter-space scans, numerical solutions of Boltzmann/transport equations, and finite-temperature field theory. 
+de Ciências da Universidade de Lisboa. My PhD thesis is submitted and I'm
+awaiting the defence. My day-to-day work is heavy scientific computing, large parameter-space scans, numerical solutions of Boltzmann/transport equations, and finite-temperature field theory.
 
-This site contains my shift into data science/machine learning, which peaked my interest in recent years with the rise of the transformer and other architectures. My main interests are building highly reliable systems/models that are able to run without many resources. Here I present personal projects that showcase my skills in computing and data science/machine learning.
+This site documents my shift into data science/machine learning, which piqued my interest in recent years with the rise of the transformer and other architectures. My main interests are building highly reliable systems/models that are able to run without many resources. Here I present personal projects that showcase my skills in computing and data science/machine learning.
 
 [**Download the full CV (PDF)**](/assets/Curriculum_Vitae_Joao_Viana.pdf)
 
@@ -27,14 +27,14 @@ Portuguese (native), English.
 
 ## Computational & technical skills
 
-- Python for scientific computing, data analysis and plots; C++ for performance-critical code and Mathematica for symbolic computations
-- Mathematical skills: differential and integral calculus, linear algebra, statistics, multivariate analysis, complex analysis, mechanics
+- Python for scientific computing, data analysis and plots; C++ for performance-critical code and Mathematica for symbolic computations.
+- Mathematical skills: differential and integral calculus, linear algebra, statistics, multivariate analysis, complex analysis, mechanics.
 - Numerical methods: root finding, minimisation algorithms, ODE/PDE integration, Monte-Carlo and large-scale parameter scans.
 - Git, GitHub Actions CI/CD, and containerised workflows with Docker and Docker Compose.
 
 ## Machine learning & data science
 
-As machine learning is extremely important in particle physics, I attended two workshops about machine learning
+As machine learning is extremely important in particle physics, I attended two workshops on machine learning.
 
 - [**ML4Physics @ Ljubljana** school](https://indico.cern.ch/event/1488532/) — machine-learning methods for physics data.
 - [**Machine Learning for Physics** workshop, LIP Lisboa](https://indico.lip.pt/event/1909/) — hands-on ML-for-physics exercises.
@@ -53,13 +53,13 @@ I have a toolchain of numerical skills, growing by the day, that can be used in 
 
 ## Relevant publications
 
-Seven publications in total (full list in the PDF). The relevant one are
+Seven publications in total (full list in the PDF). The relevant one is
 
 - **J. Viana**, C. H. van Dorp, A. Nunes, et al. — *Controlling the pandemic during the SARS-CoV-2 vaccination rollout*, [Nature Communications **12**, 3674](https://doi.org/10.1038/s41467-021-23938-8) (2021). *(data-driven epidemiological modelling)*
 
-which was made in an international collaboration to predict the evolution of the SARS-CoV-2 hospitalisations in Portugal. We used an MCMC algorithm to fit a Master's equation to the number of hospitalisations that allowed us to estimate which groups were more vulnerable, the effects of vaccination and so on.
+which was made in an international collaboration to predict the evolution of the SARS-CoV-2 hospitalisations in Portugal. We used an MCMC algorithm to fit a master equation to the number of hospitalisations, which allowed us to estimate which groups were more vulnerable, the effects of vaccination and so on.
 
-The other two relevant publication are these
+The other two relevant publications are these
 
 - P. Basler, L. Biermann, M. Mühlleitner, J. Müller, R. Santos, **J. Viana** — *BSMPT v3: A Tool for Phase Transitions and Primordial Gravitational Waves in Extended Higgs Sectors*, [arXiv:2404.19037](https://arxiv.org/abs/2404.19037) (2024).
 - M. Mühlleitner, J. Plotnikov, R. Santos, **J. Viana** — *A Deep Dive into Baryon Asymmetry — the C2HDM*, [arXiv:2606.04229](https://arxiv.org/abs/2606.04229) (2026). *(most recent)*

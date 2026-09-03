@@ -30,7 +30,7 @@ collection.add(ids=ids, documents=documents, metadatas=metadatas)
 This creates a database with the embeddings of the NumPy docs. We can then query with another string and check whether any similar or relevant sentences appear in the docs:
 
 ``` python
-collection.query(query_texts=["How to reshape an numpy array?"])
+collection.query(query_texts=["How to reshape a numpy array?"])
 ```
 
 For this example, the 5th result starts with `numpy.ndarray.reshape#\nmethod\nndarray.reshape(shape, /, *, order='C', copy=None)...`, which is exactly the [function to use](https://numpy.org/devdocs/reference/generated/numpy.ndarray.reshape.html).

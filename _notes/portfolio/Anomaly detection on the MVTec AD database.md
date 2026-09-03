@@ -4,7 +4,7 @@ feed: show
 date: 2026-08-21
 ---
 
-In this project, I tried to perform **zero-shot** anomaly detection on the MVTec database. By **zero-shot** we meant that we only train with model with nominal/anomaly-free pictures of the subjects but then we want to be able to distinguish between nominal and anomaly. The MVTec dabase consists on series of pictures of
+In this project, I tried to perform **zero-shot** anomaly detection on the MVTec database. By **zero-shot** we mean that we only train the model with nominal/anomaly-free pictures of the subjects, but then we want to be able to distinguish between nominal and anomalous. The MVTec database consists of a series of pictures of
 
 - bottle
 - cable
@@ -21,11 +21,11 @@ In this project, I tried to perform **zero-shot** anomaly detection on the MVTec
 - wood
 - zipper
 
-which of these datasets contains a `train` folder which consists only of nominal pictures; and a `test` folder that consists of a `good` folder (nominal pictures) and other folders labeled with specific anomalies. E.g. for `bottle`, the anomaly folders are `broken_large` , `broken_small` and  `contamination`. We do not plain to distinguish between each type of anomaly, only whether the image contain an anomaly or not.
+Each of these datasets contains a `train` folder which consists only of nominal pictures, and a `test` folder that consists of a `good` folder (nominal pictures) and other folders labeled with specific anomalies. E.g. for `bottle`, the anomaly folders are `broken_large`, `broken_small` and `contamination`. We do not plan to distinguish between each type of anomaly, only whether the image contains an anomaly or not.
 
 Due to computational and time limitations, I will only focus on three categories
 
-- bottle - circular symmetry, all `train`images are very similar
+- bottle - circular symmetry, all `train` images are very similar
 
 ![[0d53fefd58e59e2f2b6a3e9fe510c2d82e168bb7.png|400]]
 
@@ -33,22 +33,22 @@ Due to computational and time limitations, I will only focus on three categories
 
 ![[a08db728849ec2e11b919d4297a17a7378a0e1d9.png|400]]
 
-- hazelnut - similar object rotated around, i.e. orientation is random
+- hazelnut - similar object rotated around, i.e. orientation is random
 
 ![[bcb9ab83b421c488a71c01a5565de680a107f178.png|400]]
 # Methods
 
-I will try to find the anomalies using two, quite different, algorithsm, which are **Convolutional Auto encoders (CAE)** and **Patchcore**. As we will soon see, CAE perform particularly bad in this dataset and patchcore shows amazing results. If needs be, we will select the threshold that maximizes the `f1_score`.
+I will try to find the anomalies using two quite different algorithms: **Convolutional Autoencoders (CAE)** and **PatchCore**. As we will soon see, CAEs perform particularly badly on this dataset while PatchCore shows amazing results. If needs be, we will select the threshold that maximizes the `f1_score`.
 
-## **Convolutional Auto encoders (CAE)**
+## **Convolutional Autoencoders (CAE)**
 
-The idea is to have a convolutional network that takes the input image, compresses it down to a latent space and then tries to reconstruct it back to the original image. The latent space has a lower dimension compared to the input image so the network has to learn the patterns of the object so that the reconstructed image is as close to the original, that is the core idea of auto encoders. Since we only use nominal data to train the CAE, the idea is for the CAE to learn how to reconstruct nominal data but not anomalous data, so we will see an increase on the loss for anomalous data compared to nominal.
+The idea is to have a convolutional network that takes the input image, compresses it down to a latent space and then tries to reconstruct it back to the original image. The latent space has a lower dimension compared to the input image so the network has to learn the patterns of the object so that the reconstructed image is as close to the original as possible; that is the core idea of autoencoders. Since we only use nominal data to train the CAE, the idea is for the CAE to learn how to reconstruct nominal data but not anomalous data, so we will see an increase in the loss for anomalous data compared to nominal.
 
-We choose between $6$ different CNN architectures, some of which were acquired from articles, suggested by LLMs or some I came up by trying to improve performance.
+We choose between $6$ different CNN architectures: some acquired from articles, some suggested by LLMs, and some I came up with by trying to improve performance.
 
-A disclaimer is necessary. Training was not done properly, I should have done k-fold to remove sampling bias; and trained for how many epochs were necessary to reach a minimum of the loss function. Moreover, each network could have been optimised for each dataset, such was not done. None of this was done due to time/computational constraints. The loss function selected was `MSE` and we used an Adam optimiser.
+A disclaimer is necessary. Training was not done properly: I should have done k-fold to remove sampling bias, and trained for as many epochs as were necessary to reach a minimum of the loss function. Moreover, each network could have been optimised for each dataset; this was not done. None of this was done due to time/computational constraints. The loss function selected was `MSE` and we used an Adam optimiser.
 
-I trained one CAE for many epochs and results improved significantly, unfortunately the same could not be done for all datasets/networks as it would take an unfeasible amount of time so. For the sake of comparison, we only train each of these networks for $100$ epochs.
+I trained one CAE for many epochs and results improved significantly; unfortunately the same could not be done for all datasets/networks as it would take an unfeasible amount of time. For the sake of comparison, we only train each of these networks for $100$ epochs.
 
 ### CAE architectures
 
@@ -187,15 +187,15 @@ class Autoencoder_005(nn.Module):
         return x
 ```
 
-## [Patchcore](https://arxiv.org/abs/2106.08265)
+## [PatchCore](https://arxiv.org/abs/2106.08265)
 
-**Patchcore** - The idea between patchcore is to use a pre trained netwoork, e.g. `resnet50`, to generates new features about the input image using the intermediate representation of the image in its layers. The argument is that these intermediate layers that capture important abstract patterns/characteristics that better generalize for any object. With these features we construct a memory bank of the feature map of only the nominal data. When doing anomaly detection, we measure if that image feature bank is close to what we have in the memory bank and, if it is not, we signal it an anomaly. This algorithm also produces a segmentation map, i.e. it can locate where the anomaly is located.
+**PatchCore** - The idea behind PatchCore is to use a pretrained network, e.g. `resnet50`, to generate new features about the input image using the intermediate representations of the image in its layers. The argument is that these intermediate layers capture important abstract patterns/characteristics that better generalize for any object. With these features we construct a memory bank of the feature maps of only the nominal data. When doing anomaly detection, we measure whether that image's feature bank is close to what we have in the memory bank and, if it is not, we flag it as an anomaly. This algorithm also produces a segmentation map, i.e. it can locate where the anomaly is.
 
-Disclaimer: From their paper, we already know that patchcore perfects exceptionally well.
+Disclaimer: from their paper, we already know that PatchCore performs exceptionally well.
 
-## MLP auto encoders
+## MLP autoencoders
 
-My first attempt was to use MLP auto encoders but, for the `bottle` dataset where most of the images are very similar, the network ended up memorising the output image. I even tried random latent space configurations but all yielded the same results. This made prediction terrible as it was, basically, a difference between the target image and *some for of mean* of the training images. For this reason, this architecture was not used, although it could in principle be used for the `carpet` and for the `hazelnut`.
+My first attempt was to use MLP autoencoders but, for the `bottle` dataset where most of the images are very similar, the network ended up memorising the output image. I even tried random latent space configurations but all yielded the same results. This made prediction terrible as it was, basically, a difference between the target image and *some form of mean* of the training images. For this reason, this architecture was not used, although it could in principle be used for the `carpet` and for the `hazelnut`.
 
 # Bottle
 
@@ -205,7 +205,7 @@ The loss function of each model clearly shows that we should have trained for lo
 
 ![[147c7ca1aad3a942b5e01addbfcb03f9cbb13f9d.png|500]]
 
-By analysing the AUC of the ROC, we see that we `Autoencoder_002` reaches `AUC = 0.8`.
+By analysing the AUC of the ROC, we see that `Autoencoder_002` reaches `AUC = 0.8`.
 
     model                 AUC
     ---------------  --------
@@ -216,7 +216,7 @@ By analysing the AUC of the ROC, we see that we `Autoencoder_002` reaches `AUC =
     Autoencoder_004  0.719841
     Autoencoder_005  0.562698
 
-It is curious to note that `Autoencoder_002` is not the model with the lowest loss, which signals that the loss function but not be a good indicator for a good anomaly detector. The reason is that it does not really matter if the model can reconstruct the image, it only matter if it was a difference performance reconstructing anomalous data compared to nominal data.
+It is curious to note that `Autoencoder_002` is not the model with the lowest loss, which signals that the loss function might not be a good indicator for a good anomaly detector. The reason is that it does not really matter whether the model can reconstruct the image, it only matters whether there is a difference in performance reconstructing anomalous data compared to nominal data.
 
 ![[d135b52da3edfe3b28ea2d06c68958acb6eb5553.png|500]]
 
@@ -224,14 +224,14 @@ I will also show the image, the reconstructed image and the difference for an an
 
 ![[03f8a7a4648426093754c76e0c7f459584648415.png]]
 
-Where we see that the reconstructed image is blurry which misses fine details of the defect. Other models reproduce crispy images, and even manage to recreate the defects. This is an indication that the latent space/bottleneck is not small enough, and that maybe should also try a more shallow network.
+Here we see that the reconstructed image is blurry and misses fine details of the defect. Other models reproduce crisp images, and even manage to recreate the defects. This is an indication that the latent space/bottleneck is not small enough, and that we should maybe also try a shallower network.
 
-## Patchcore
+## PatchCore
 
-It is already known that patchcore performs very well in this dataset, building it is also somewhat quick as no training is necessary. We will instead do a hyperparameter search so that we have low inference times and high precision. We will vary the
+It is already known that PatchCore performs very well on this dataset; building it is also somewhat quick, as no training is necessary. We will instead do a hyperparameter search so that we have low inference times and high precision. We will vary the
 
-- `backbone` - `resnet50`, `wide_resnet50_2` - where the feature map come from
-- `coreset_sampling_ratio` - to improve inference speed, only a fraction .`coreset_sampling_ratio`of the memory bank is taken into account.
+- `backbone` - `resnet50`, `wide_resnet50_2` - where the feature maps come from
+- `coreset_sampling_ratio` - to improve inference speed, only a fraction `coreset_sampling_ratio` of the memory bank is taken into account.
 - `num_neighbors` - `[2, 6, 10]` - during inference, we use a KNN to rescale the anomaly score with `num_neighbors` many neighbours.
 
 For the `bottle`, the results are
@@ -257,12 +257,12 @@ For the `bottle`, the results are
       16      0.297119  1                    6            0.1    wide
       17      0.285889  1                   10            0.1    wide
 
-where we see that we have many models with `AUC = 1`which means that they are perfect anomaly detectors, of course this might change with more data. Overall, we have that the `wide_resnet50_2` performs better than the `resnet50`; and that `num_neighbors` should be at least $4$. We see terrible performance for `coreset_ratio = 0.001` and `resnet50`. In order to distinguish between all the models with `AUC = 1`, we will introduce a new metric `seperation` that calculates the distance of the anomaly score between the nominal picture with the highest score and the anomalous picture with the lowest score. This metric will tell us how good the model is at separating the nominal from the anomalous, so the bigger this metric is the better. A negative separation only occurs for non-perfect anomaly detectors.
+where we see that we have many models with `AUC = 1`, which means that they are perfect anomaly detectors; of course this might change with more data. Overall, the `wide_resnet50_2` performs better than the `resnet50`, and `num_neighbors` should be at least $4$. We see terrible performance for `coreset_ratio = 0.001` and `resnet50`. In order to distinguish between all the models with `AUC = 1`, we will introduce a new metric `separation` that calculates the distance in anomaly score between the nominal picture with the highest score and the anomalous picture with the lowest score. This metric will tell us how good the model is at separating the nominal from the anomalous, so the bigger this metric is the better. A negative separation only occurs for non-perfect anomaly detectors.
 We then find that the best model is
 
     num_neighbors = 2, coreset_ratio = 0.001, backbone = `wide_resnet50_2`
 
-which interestingly, has a smaller memory bank compared to the other models. It appears that more memory items introduce variance that make the model less certain.
+which, interestingly, has a smaller memory bank compared to the other models. It appears that more memory items introduce variance that makes the model less certain.
 
 # Carpet
 
@@ -272,7 +272,7 @@ The loss function of each model clearly shows that we should have trained for lo
 
 ![[477b1b99e8d67ee8a82ce289fa4c3edaf7255729.png|500]]
 
-I will show now, the `AUC` for each model
+I will now show the `AUC` for each model
 
     model                 AUC
     ---------------  --------
@@ -283,9 +283,9 @@ I will show now, the `AUC` for each model
     Autoencoder_004  0.408909
     Autoencoder_005  0.364366
 
-and we can see that all of them are less than $0.5$ (random chance), and that more epochs are different architectures are needed.
+and we can see that all of them are less than $0.5$ (random chance), and that more epochs and different architectures are needed.
 
-Showing the `ROC` curve of the *best* performing model, `Autoencoder_003`, shows that for most threshold values, it would be better to go against the model (or flip a coin). For some threshold values, this model is very slightly better than flipping a coin.
+The `ROC` curve of the *best* performing model, `Autoencoder_003`, shows that for most threshold values it would be better to go against the model (or flip a coin). For some threshold values, this model is very slightly better than flipping a coin.
 
 ![[97411d62c7abedf544ac21bf7adb01d1ff673f7a.png|500]]
 
@@ -293,14 +293,14 @@ I will also show the image, the reconstructed image and the difference for an an
 
 ![[e4f93065b37ce3022cef7bc270e576abdc2d9928.png]]
 
-Where the anomaly is reconstructed, so it is necessary to increase tighten the bottleneck on these models. For this image in particular, all models reconstructed the anomaly, except model `Autoencoder_004` that just reconstructs the carpet without anomaly but contains a lot of noise that spoils the `MSE`, which makes the anomaly go on undetected.
+Here the anomaly is reconstructed, so it is necessary to tighten the bottleneck on these models. For this image in particular, all models reconstructed the anomaly, except model `Autoencoder_004`, which just reconstructs the carpet without the anomaly but contains a lot of noise that spoils the `MSE`, which makes the anomaly go undetected.
 
-## Patchcore
+## PatchCore
 
-It is already known that patchcore performs very well in this dataset, building it is also somewhat quick as no training is necessary. We will instead do a hyperparameter search so that we have low inference times and high precision. We will vary the
+It is already known that PatchCore performs very well on this dataset; building it is also somewhat quick, as no training is necessary. We will instead do a hyperparameter search so that we have low inference times and high precision. We will vary the
 
-- `backbone` - `resnet50`, `wide_resnet50_2` - where the feature map come from
-- `coreset_sampling_ratio` - to improve inference speed, only a fraction .`coreset_sampling_ratio`of the memory bank is taken into account.
+- `backbone` - `resnet50`, `wide_resnet50_2` - where the feature maps come from
+- `coreset_sampling_ratio` - to improve inference speed, only a fraction `coreset_sampling_ratio` of the memory bank is taken into account.
 - `num_neighbors` - `[2, 6, 10]` - during inference, we use a KNN to rescale the anomaly score with `num_neighbors` many neighbours.
 
 For the `carpet`, the results are
@@ -326,16 +326,16 @@ For the `carpet`, the results are
       16     -0.697266  0.94382              6            0.1    wide
       17     -0.695312  0.926164            10            0.1    wide
 
-where we can see that we do not have a perfect model with `AUC = 1`. In general, the `wide_resnet50_2` performs better than `resnet50`, and `num_neighbors` seems to be prefered at either $2$ or $6$.
+where we can see that we do not have a perfect model with `AUC = 1`. In general, the `wide_resnet50_2` performs better than `resnet50`, and `num_neighbors` seems to be preferred at either $2$ or $6$.
 
 The goal is to find the model and a threshold that maximizes the `f1_score`. That model is
 `num_neighbors = 6, coreset_sampling_ratio = 0.1, backbone = wide_resnet50_2`
 
-with a threshold of `1.0` (i.e. exactly $1$, one should subtract a small number to account for numerical fluctiations) with an `f1_score` of $0.97$.
+with a threshold of `1.0` (i.e. exactly $1$, one should subtract a small number to account for numerical fluctuations), with an `f1_score` of $0.97$.
 
 In the cases where inference time is of great importance, we can trade this model for
 `num_neighbors = 2, coreset_sampling_ratio = 0.01, backbone = wide_resnet50_2`
-which has a lower `AUC` ($0.94 \to 0.87$) but it many times faster at inference. For this model, the optimal threshold of still `1.0` with an `f1_score` of $0.92$.
+which has a lower `AUC` ($0.94 \to 0.87$) but is many times faster at inference. For this model, the optimal threshold is still `1.0`, with an `f1_score` of $0.92$.
 
 # Hazelnut
 
@@ -345,7 +345,7 @@ The loss function of each model clearly shows that we should have trained for lo
 
 ![[d6231d4e0e9396a9a39110e652c088ae39b0a06c.png|500]]
 
-I will show now, the `AUC` for each model
+I will now show the `AUC` for each model
 
     model                 AUC
     ---------------  --------
@@ -358,7 +358,7 @@ I will show now, the `AUC` for each model
 
 where we get decent `AUC`. The best model `Autoencoder_004` reaches `AUC = 0.88`.
 
-Showing the `ROC` curve of the *best* performing model, `Autoencoder_004`, shows that the model performs quite well.
+The `ROC` curve of the *best* performing model, `Autoencoder_004`, shows that the model performs quite well.
 
 ![[f1019bdcb6299a6ac5a99a14f3fb5d5b6d901c33.png|500]]
 
@@ -366,14 +366,14 @@ I will also show the image, the reconstructed image and the difference for an an
 
 ![[84a8551ef22cbd793ccde15694f96f59e8efefb7.png]]
 
-Where the anomaly is still reconstructed but the whole image appears more blurry.
+Here the anomaly is still reconstructed, but the whole image appears more blurry.
 
-## Patchcore
+## PatchCore
 
-It is already known that patchcore performs very well in this dataset, building it is also somewhat quick as no training is necessary. We will instead do a hyperparameter search so that we have low inference times and high precision. We will vary the
+It is already known that PatchCore performs very well on this dataset; building it is also somewhat quick, as no training is necessary. We will instead do a hyperparameter search so that we have low inference times and high precision. We will vary the
 
-- `backbone` - `resnet50`, `wide_resnet50_2` - where the feature map come from
-- `coreset_sampling_ratio` - to improve inference speed, only a fraction .`coreset_sampling_ratio`of the memory bank is taken into account.
+- `backbone` - `resnet50`, `wide_resnet50_2` - where the feature maps come from
+- `coreset_sampling_ratio` - to improve inference speed, only a fraction `coreset_sampling_ratio` of the memory bank is taken into account.
 - `num_neighbors` - `[2, 6, 10]` - during inference, we use a KNN to rescale the anomaly score with `num_neighbors` many neighbours.
 
 For the `hazelnut`, the results are
@@ -399,10 +399,10 @@ For the `hazelnut`, the results are
       16    0.271729    1                    6            0.1    wide
       17    0.278809    1                   10            0.1    wide
 
-where we have many perfect models, except when `num_neighbors` = 2. Looking at separation, i.e. lowest anomalous anomaly score minus highest nominal anomaly score, we see a difference between the models. The model with the highest separation is
+where we have many perfect models, except when `num_neighbors` = 2. Looking at separation, i.e. lowest anomalous anomaly score minus highest nominal anomaly score, we see a difference between the models. The model with the highest separation is
 `num_neighbors = 10, coreset_sampling_ratio = 0.01, backbone = wide_resnet50_2`
-with a seperation of $0.3$.
+with a separation of $0.3$.
 
 Again, if inference speed is important, one could trade this model for
 `num_neighbors = 6/10, coreset_sampling_ratio = 0.001, backbone = wide_resnet50_2`
-which has a separation on $0.18$, i.e. comparable with $0.3$, but has an inference speed many times faster than the previous model.
+which has a separation of $0.18$, i.e. comparable with $0.3$, but has an inference speed many times faster than the previous model.
