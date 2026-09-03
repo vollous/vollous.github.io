@@ -5,7 +5,7 @@ date: 2026-09-03
 ---
 # Curriculum Vitae
 
-<figure><img src="/assets/img/profile.jpeg" alt="Chico Viana" width="220" /></figure>
+<img class="cv-portrait" src="/assets/img/profile.jpeg" alt="Chico Viana" />
 
 I'm **João "Chico" Viana**, a particle-physics researcher at the Faculdade
 de Ciências da Universidade de Lisboa — my PhD thesis is submitted and I'm

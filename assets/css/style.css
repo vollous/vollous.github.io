@@ -356,6 +356,26 @@ a:hover {
   opacity: 0.85;
 }
 
+/* Floated portrait (CV) — text wraps around it */
+.cv-portrait {
+  float: right;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 0 var(--space-sm) var(--space-md);
+  border: 3px solid var(--bg2);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 480px) {
+  .cv-portrait {
+    float: none;
+    display: block;
+    margin: 0 auto var(--space-md);
+  }
+}
+
 /* Project cards */
 .project-card h3 {
   margin: 0 0 var(--space-xs);
