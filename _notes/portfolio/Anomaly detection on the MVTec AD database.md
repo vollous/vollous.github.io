@@ -3,7 +3,6 @@ title: Anomaly detection on the MVTec AD database
 feed: show
 date: 2026-08-21
 ---
-# Anomaly detection on the MVTec AD database
 
 In this project, I tried to perform **zero-shot** anomaly detection on the MVTec database. By **zero-shot** we meant that we only train with model with nominal/anomaly-free pictures of the subjects but then we want to be able to distinguish between nominal and anomaly. The MVTec dabase consists on series of pictures of
 

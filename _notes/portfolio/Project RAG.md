@@ -3,7 +3,6 @@ title: Numpy RAG powered assistant
 feed: show
 date: 2026-09-03
 ---
-# Project RAG
 
 In this project, I wanted to take a very small LLM, sub 1B parameters, and boost its performance with a RAG system. I chose to work in the context of the **NumPy** documentation, since it contains many details, arguments and functions, so a small LLM is prone to hallucinating about it.
 

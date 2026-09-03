@@ -3,7 +3,6 @@ title: Curriculum Vitae
 feed: hide
 date: 2026-09-03
 ---
-# Curriculum Vitae
 
 <img class="cv-portrait" src="/assets/img/profile.jpeg" alt="Chico Viana" />
 
