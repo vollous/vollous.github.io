@@ -15,6 +15,8 @@ This site collects write-ups of my data science and machine learning projects â€
 each one covers the full path from exploratory analysis through model selection
 to evaluation.
 
+<a class="btn btn-brand" href="{{ site.baseurl }}/notes/curriculum-vitae">Curriculum Vitae</a>
+
 <div style="clear: both;"></div>
 
 ## Projects

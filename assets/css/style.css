@@ -244,6 +244,16 @@ a:hover {
   color: var(--bg);
 }
 
+.btn-brand {
+  background: var(--brand);
+}
+
+.btn-brand:hover {
+  background: var(--brand);
+  opacity: 0.85;
+  color: var(--bg);
+}
+
 .note-list-sec {
   margin-top: var(--space-xl);
 }
