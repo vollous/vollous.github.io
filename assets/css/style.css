@@ -420,6 +420,18 @@ hr {
   margin: var(--space-xl) 0;
 }
 
+.project-card {
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: var(--space-sm) var(--space-md);
+  margin-bottom: var(--space-md);
+  background: var(--bg2);
+}
+
+.project-card > :last-child {
+  margin-bottom: 0;
+}
+
 ul, ol {
   margin-bottom: var(--space-md);
   padding-left: var(--space-lg);

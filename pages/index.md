@@ -19,13 +19,21 @@ to evaluation.
 
 ## Projects
 
-- [[Impact of AI on Students]] — EDA, regression on post-semester GPA, and
-  threshold-tuned classification of burnout risk on a synthetic Kaggle dataset.
-- [[Anomaly detection on the MVTec AD database]] — zero-shot defect detection
-  comparing convolutional autoencoders against PatchCore.
-- [[Numpy RAG powered assistant]] — a sub-1B-parameter LLM boosted with a
-  ChromaDB retrieval layer over the NumPy documentation, deployed with Docker
-  Compose.
+<div class="project-card" markdown="1">
+[[Impact of AI on Students]] — EDA, regression on post-semester GPA, and
+threshold-tuned classification of burnout risk on a synthetic Kaggle dataset.
+</div>
+
+<div class="project-card" markdown="1">
+[[Anomaly detection on the MVTec AD database]] — zero-shot defect detection
+comparing convolutional autoencoders against PatchCore.
+</div>
+
+<div class="project-card" markdown="1">
+[[Numpy RAG powered assistant]] — a sub-1B-parameter LLM boosted with a
+ChromaDB retrieval layer over the NumPy documentation, deployed with Docker
+Compose.
+</div>
 
 Browse everything under [Projects]({{ site.baseurl }}/notes), read more
 [about me]({{ site.baseurl }}/about), or see my [[Curriculum Vitae]].
