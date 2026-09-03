@@ -3,7 +3,7 @@ layout: Post
 permalink: /
 ---
 
-<figure><img src="/assets/img/profile.png" alt="Chico Viana" width="180" /></figure>
+<img src="/assets/img/profile.png" alt="Chico Viana" width="180" style="float: right; margin: 0 0 1rem 1.5rem; border-radius: 8px;" />
 
 I'm **Chico Viana**. I spent my PhD teaching computers to model the first
 fractions of a second of the universe; now I point the same curiosity and the
@@ -14,6 +14,8 @@ how far the model can be trusted.
 This site collects write-ups of my data science and machine learning projects —
 each one covers the full path from exploratory analysis through model selection
 to evaluation.
+
+<div style="clear: both;"></div>
 
 ## Projects
 
