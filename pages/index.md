@@ -17,5 +17,5 @@ through model selection to evaluation.
   ChromaDB retrieval layer over the NumPy documentation, deployed with Docker
   Compose.
 
-Browse everything under [Projects]({{ site.baseurl }}/notes), or read more
-[about me]({{ site.baseurl }}/about).
+Browse everything under [Projects]({{ site.baseurl }}/notes), read more
+[about me]({{ site.baseurl }}/about), or see my [[Curriculum Vitae]].

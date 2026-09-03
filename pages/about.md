@@ -16,4 +16,8 @@ with threshold tuning), computer-vision anomaly detection (convolutional
 autoencoders and PatchCore), and retrieval-augmented generation with small,
 locally-served LLMs.
 
+Outside this portfolio I'm a PhD researcher in particle physics at the
+Faculdade de Ciências da Universidade de Lisboa, where most of my work is
+large-scale scientific computing. See my [[Curriculum Vitae]] for the details.
+
 The source for this site lives on [GitHub](https://github.com/vollous).
