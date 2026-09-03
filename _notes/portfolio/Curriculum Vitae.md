@@ -31,7 +31,10 @@ it.
 
 ## Machine learning & data science
 
-From the project write-ups on this site, plus the **ML4Physics @ Ljubljana** school.
+From the project write-ups on this site, plus:
+
+- **ML4Physics @ Ljubljana** school — machine-learning methods for physics data.
+- **Machine Learning for Physics** workshop, LIP Lisboa (March 2025) — hands-on ML-for-physics exercises.
 
 - **Tools:** Python, PyTorch, scikit-learn, pandas, NumPy, Matplotlib.
 - **Tabular ML:** end-to-end pipelines — EDA and feature engineering, model selection across linear models, tree ensembles and neural nets, cross-validated hyperparameter search, and evaluation with decision-threshold tuning for imbalanced classes.
