@@ -28,7 +28,7 @@ preferences:
   search:
     enabled: true
   backlinks:
-    enabled: true
+    enabled: false
   pagepreview:
     enabled: true
   wiki_style_link:
