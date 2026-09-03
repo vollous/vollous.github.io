@@ -14,6 +14,10 @@ This site contains my shift into data science/machine learning, which peaked my 
 
 [**Download the full CV (PDF)**](/assets/Curriculum_Vitae_Joao_Viana.pdf)
 
+## Languages
+
+Portuguese (native), English.
+
 ## Education
 
 - **PhD, Particle Physics** — *The early universe as a window to particle physics*, Faculdade de Ciências, Universidade de Lisboa (2022–2026). Thesis submitted; awaiting defence. Supervisor: Rui Santos. FCT fellowship PRT/BD/154191/2022.
@@ -49,16 +53,21 @@ I have a toolchain of numerical skills, growing by the day, that can be used in 
 
 ## Relevant publications
 
-Seven publications in total (full list in the PDF). Most relevant here:
+Seven publications in total (full list in the PDF). The relevant one are
 
-- L. Biermann, C. Borschensky, R. Boto, M. Mühlleitner, R. Santos, **J. Viana** — *A Comprehensive Analysis of the R2HDM Vacuum Evolution and the Induced GW and Collider Phenomenology*, arXiv:2608.25636 (2026). *(most recent)*
-- P. Basler, L. Biermann, M. Mühlleitner, J. Müller, R. Santos, **J. Viana** — *BSMPT v3: A Tool for Phase Transitions and Primordial Gravitational Waves in Extended Higgs Sectors*, arXiv:2404.19037 (2024).
-- **J. Viana**, C. H. van Dorp, A. Nunes, et al. — *Controlling the pandemic during the SARS-CoV-2 vaccination rollout*, Nature Communications **12**, 3674 (2021). *(data-driven epidemiological modelling)*
+- **J. Viana**, C. H. van Dorp, A. Nunes, et al. — *Controlling the pandemic during the SARS-CoV-2 vaccination rollout*, [Nature Communications **12**, 3674](https://doi.org/10.1038/s41467-021-23938-8) (2021). *(data-driven epidemiological modelling)*
+
+which was made in an international collaboration to predict the evolution of the SARS-CoV-2 hospitalisations in Portugal. We used an MCMC algorithm to fit a Master's equation to the number of hospitalisations that allowed us to estimate which groups were more vulnerable, the effects of vaccination and so on.
+
+The other two relevant publication are these
+
+- P. Basler, L. Biermann, M. Mühlleitner, J. Müller, R. Santos, **J. Viana** — *BSMPT v3: A Tool for Phase Transitions and Primordial Gravitational Waves in Extended Higgs Sectors*, [arXiv:2404.19037](https://arxiv.org/abs/2404.19037) (2024).
+- M. Mühlleitner, J. Plotnikov, R. Santos, **J. Viana** — *A Deep Dive into Baryon Asymmetry — the C2HDM*, [arXiv:2606.04229](https://arxiv.org/abs/2606.04229) (2026). *(most recent)*
+
+which contain my work in a computational project relevant for the detection of gravitational waves in future experiments.
 
 ## Teaching & mentoring
 
-- Supervised student projects at the CFTC Summer Internship Program (2023 and 2024).
+- Supervised student projects at the CFTC Summer Internship Program (2023, 2024 and 2025).
 
-## Languages
 
-Portuguese (native), English.
