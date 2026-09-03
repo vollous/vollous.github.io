@@ -359,7 +359,7 @@ a:hover {
 /* Portrait + intro (CV) — side by side, text keeps its own column */
 .cv-header {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: var(--space-lg);
   margin-bottom: var(--space-md);
 }
