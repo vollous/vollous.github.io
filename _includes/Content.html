@@ -74,15 +74,19 @@ document.addEventListener('DOMContentLoaded', function() {
                         link.href = foundNote.url;
                         link.textContent = linkText;
                         link.className = 'wiki-link';
-                        
-                        // Add hover preview functionality
-                        link.addEventListener('mouseenter', function() {
-                            showPreview(this, foundNote.title, foundNote.excerpt);
-                        });
-                        
-                        link.addEventListener('mouseleave', function() {
-                            hidePreview();
-                        });
+
+                        // Add hover preview functionality (skip inside project
+                        // cards, where the link is stretched over the whole card)
+                        const inProjectCard = node.parentElement && node.parentElement.closest('.project-card');
+                        if (!inProjectCard) {
+                            link.addEventListener('mouseenter', function() {
+                                showPreview(this, foundNote.title, foundNote.excerpt);
+                            });
+
+                            link.addEventListener('mouseleave', function() {
+                                hidePreview();
+                            });
+                        }
                     } else {
                         // Note doesn't exist - create a placeholder
                         link.href = 'javascript:void(0)';
