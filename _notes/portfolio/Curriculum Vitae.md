@@ -29,7 +29,7 @@ This site documents my shift into data science/machine learning, which piqued my
 
 ## Skills
 - Perform thorough research and document the findings.
-- Learn new concepts easily using my math/physics background.
+- Learn new concepts easily using my maths/physics background.
 - Analyse sets of data and develop models to explain it.
 - Public speaking.
 - Manage and develop collaborative projects using git.
