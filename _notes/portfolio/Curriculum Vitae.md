@@ -50,7 +50,7 @@ As machine learning is extremely important in particle physics, I attended two w
 
 I have a toolchain of numerical skills, growing by the day, that can be used in a multitude of scenarios. That toolchain contains
 
-- **Python**: pytorch, scikit-learn, pandas, NumPy, Matplotlib, scipy, BeautifulSoup, streamlit, fastapi.
+- **Python**: pytorch, scikit-learn, pandas, NumPy, Matplotlib, scipy, BeautifulSoup, thread.
 - **Tabular Data:**  EDA and feature engineering, model selection across linear models, tree ensembles and neural nets, cross-validated hyperparameter search, and evaluation with decision-threshold tuning for imbalanced classes.
 - **Computer vision:** unsupervised anomaly detection with convolutional autoencoders and PatchCore, using transfer learning from pretrained CNN backbones.
 - **LLMs & RAG:** retrieval-augmented generation with locally-served models (Ollama), ChromaDB vector store, and sentence-transformer embeddings.
