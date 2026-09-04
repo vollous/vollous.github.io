@@ -27,6 +27,14 @@ This site documents my shift into data science/machine learning, which piqued my
 - Portuguese (native)
 - English.
 
+## Skills
+- Perform thorough research and document the findings.
+- Learn new concepts easily using my math/physics background.
+- Analyse sets of data and develop models to explain it.
+- Public speaking.
+- Manage and develop collaborative projects using git.
+- Deploy models into production. 
+
 ## Education
 
 - **PhD, Particle Physics** — *The early universe as a window to particle physics*, Faculdade de Ciências, Universidade de Lisboa (2022–2026). Thesis submitted; awaiting defence. Supervisor: Rui Santos. FCT fellowship PRT/BD/154191/2022.
