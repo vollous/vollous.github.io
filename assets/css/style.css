@@ -422,6 +422,20 @@ a:hover {
   line-height: 1.6;
 }
 
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-md);
+}
+
+.section-head h2 {
+  margin: 0;
+}
+
 .more-link {
   margin-top: var(--space-lg);
 }
