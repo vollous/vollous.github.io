@@ -303,6 +303,13 @@ a:hover {
   color: var(--title);
 }
 
+.btn svg {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.5em;
+  vertical-align: -0.15em;
+}
+
 /* Home hero */
 .hero {
   text-align: center;
