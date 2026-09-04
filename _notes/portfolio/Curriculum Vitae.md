@@ -36,10 +36,11 @@ This site documents my shift into data science/machine learning, which piqued my
 
 ## Computational & technical skills
 
-- Python for scientific computing, data analysis and plots; C++ for performance-critical code and Mathematica for symbolic computations.
+- Python for scientific computing, data analysis and plots; C++ for performance-critical code and Mathematica for symbolic computations; some working knowledge of R.
 - Mathematical skills: differential and integral calculus, linear algebra, statistics, multivariate analysis, complex analysis, mechanics.
 - Numerical methods: root finding, minimisation algorithms, ODE/PDE integration, Monte-Carlo and large-scale parameter scans.
 - Git, GitHub Actions CI/CD, and containerised workflows with Docker and Docker Compose.
+- OS: Windows, macOS and Linux.
 
 ## Machine learning & data science
 
