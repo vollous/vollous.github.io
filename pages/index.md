@@ -11,7 +11,7 @@ permalink: /
 
 Data science & machine learning, with a physicist's touch.
 
-I spent my PhD teaching computers to describe the universe's first fractions of a second. Now I point the same curiosity and the same numerical toolkit at data problems closer to home. My goal is to design and train highly efficient models that run reliably on limited resources.
+I spent my PhD teaching computers to describe the universe's first fractions of a second. Now I point the same curiosity at data problems closer to home. My goal is to design and train highly efficient models that run reliably on limited resources.
 
 <span class="hero-actions">
 <a class="btn btn-brand" href="{{ site.baseurl }}/notes/curriculum-vitae">Curriculum Vitae</a>
