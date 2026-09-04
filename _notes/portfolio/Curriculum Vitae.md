@@ -45,13 +45,13 @@ This site documents my shift into data science/machine learning, which piqued my
 
 As machine learning is extremely important in particle physics, I attended two workshops on machine learning.
 
-- [**ML4Physics @ Ljubljana** school](https://indico.cern.ch/event/1488532/) — machine-learning methods for physics data.
 - [**Machine Learning for Physics** workshop, LIP Lisboa](https://indico.lip.pt/event/1909/) — hands-on ML-for-physics exercises.
+- [**ML4Physics @ Ljubljana** school](https://indico.cern.ch/event/1488532/) — machine-learning methods for physics data.
 
 I have a toolchain of numerical skills, growing by the day, that can be used in a multitude of scenarios. That toolchain contains
 
-- python, pytorch, scikit-learn, pandas, NumPy, Matplotlib, scipy, BeautifulSoup.
-- **Tabular ML:**  EDA and feature engineering, model selection across linear models, tree ensembles and neural nets, cross-validated hyperparameter search, and evaluation with decision-threshold tuning for imbalanced classes.
+- **Python**: pytorch, scikit-learn, pandas, NumPy, Matplotlib, scipy, BeautifulSoup, streamlit, fastapi.
+- **Tabular Data:**  EDA and feature engineering, model selection across linear models, tree ensembles and neural nets, cross-validated hyperparameter search, and evaluation with decision-threshold tuning for imbalanced classes.
 - **Computer vision:** unsupervised anomaly detection with convolutional autoencoders and PatchCore, using transfer learning from pretrained CNN backbones.
 - **LLMs & RAG:** retrieval-augmented generation with locally-served models (Ollama), ChromaDB vector store, and sentence-transformer embeddings.
 - **Deployment:** FastAPI services and Streamlit front-ends, containerised with Docker and orchestrated with Docker Compose.
