@@ -63,6 +63,7 @@ body {
   color: var(--text);
   background: var(--bg);
   font-size: var(--scale-base);
+  overflow-x: clip;
 }
 
 .container {
@@ -85,7 +86,22 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: var(--space-xl);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  margin-bottom: var(--space-lg);
+  padding-block: 0.85rem;
+  background: var(--bg);
+}
+
+/* Full-bleed backing so scrolled content never peeks past the sticky nav */
+.nav::before {
+  content: "";
+  position: absolute;
+  inset: 0 calc(50% - 50vw);
+  z-index: -1;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
 }
 
 .nav-left a {
@@ -672,10 +688,10 @@ a:hover {
 
   .note-body #markdown-toc {
     position: fixed;
-    top: 5.5rem;
+    top: 7.25rem;
     left: calc(50vw - 32rem + var(--space-xl));
     width: 11.5rem;
-    max-height: calc(100vh - 8rem);
+    max-height: calc(100vh - 9rem);
     overflow-y: auto;
     overscroll-behavior: contain;
     margin: 0;
