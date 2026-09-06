@@ -37,7 +37,7 @@ This site documents my shift into data science/machine learning, which piqued my
 
 ## Education
 
-- **PhD, Particle Physics** — *The early universe as a window to particle physics*, Faculdade de Ciências, Universidade de Lisboa (2022–2026). Thesis submitted; awaiting defence. Supervisor: Rui Santos. FCT fellowship PRT/BD/154191/2022.
+- **PhD, Particle Physics and Astronomy** — *The early universe as a window to particle physics*, Faculdade de Ciências, Universidade de Lisboa (2022–2026). Thesis submitted; awaiting defence. Supervisor: Rui Santos. FCT fellowship PRT/BD/154191/2022.
 - **MSc, Nuclear and Particle Physics** — Faculdade de Ciências, Universidade de Lisboa (2019–2022).
 - **BSc, Physics** — Faculdade de Ciências, Universidade de Lisboa (2016–2019).
 - **Academic Merit Prizes** — Universidade de Lisboa, awarded 2016/17, 2017/18 and 2018/19.
@@ -80,7 +80,7 @@ which was made in an international collaboration to predict the evolution of the
 The other two relevant publications are
 
 - P. Basler, L. Biermann, M. Mühlleitner, J. Müller, R. Santos, **J. Viana** — *BSMPT v3: A Tool for Phase Transitions and Primordial Gravitational Waves in Extended Higgs Sectors*, [arXiv:2404.19037](https://arxiv.org/abs/2404.19037) (2024).
-- M. Mühlleitner, J. Plotnikov, R. Santos, **J. Viana** — *A Deep Dive into Baryon Asymmetry — the C2HDM*, [arXiv:2606.04229](https://arxiv.org/abs/2606.04229) (2026). *(most recent)*
+- M. Mühlleitner, J. Plotnikov, R. Santos, **J. Viana** — *A Deep Dive into Baryon Asymmetry — the C2HDM*, [arXiv:2606.04229](https://arxiv.org/abs/2606.04229) (2026). 
 
 which contain my work in a computational project relevant for predicting the signal of gravitational waves in future experiments.
 
