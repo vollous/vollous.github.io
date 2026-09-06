@@ -53,6 +53,7 @@ body.theme-transition {
 
 html {
   font-size: 15px;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -215,6 +216,11 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--title);
   margin-bottom: var(--space-sm);
   line-height: 1.5;
+}
+
+/* Keep TOC anchor jumps from landing flush against the top of the viewport */
+.content :is(h1, h2, h3, h4, h5, h6)[id] {
+  scroll-margin-top: var(--space-lg);
 }
 
 h1 {
@@ -583,6 +589,130 @@ a:hover {
 }
 
 /* Markdown Support */
+
+/* Table of contents.
+   Narrow screens: an inline card at the top of the write-up.
+   Wide screens (see media query below): a fixed rail in the left gutter. */
+#markdown-toc {
+  position: relative;
+  list-style: none;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--bg2);
+  padding: var(--space-md);
+  margin: var(--space-lg) 0;
+  font-size: var(--scale-sm);
+  line-height: 1.3;
+}
+
+#markdown-toc::before {
+  content: "Contents";
+  display: block;
+  margin-bottom: var(--space-xs);
+  padding-left: var(--space-xs);
+  color: var(--text);
+  font-weight: var(--weight-bold);
+  font-size: var(--scale-xs);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+#markdown-toc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Progressive indent at every nesting level */
+#markdown-toc li ul {
+  padding-left: 0.8rem;
+}
+
+#markdown-toc li {
+  margin: 0;
+}
+
+#markdown-toc a {
+  display: block;
+  padding: 0.24rem var(--space-xs);
+  border-radius: 0.25rem;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+/* Sub-sections read a touch lighter than top-level entries */
+#markdown-toc li li a {
+  color: color-mix(in srgb, var(--text) 82%, transparent);
+}
+
+#markdown-toc a:hover {
+  color: var(--title);
+  background: color-mix(in srgb, var(--brand) 9%, transparent);
+}
+
+#markdown-toc a.is-active {
+  color: var(--brand);
+  font-weight: var(--weight-bold);
+}
+
+/* Sliding accent bar — only visible in the sidebar layout below */
+.toc-marker {
+  display: none;
+}
+
+/* Promote the TOC to a left sidebar once the centred column has gutter to spare.
+   50vw - 32rem is the left edge of the .container > div (max-width 64rem, centred);
+   the write-up body is padded on the left to clear the rail. */
+@media (min-width: 1120px) {
+  .note-body:has(#markdown-toc) > h1,
+  .note-body:has(#markdown-toc) > .content {
+    padding-left: 13rem;
+  }
+
+  .note-body #markdown-toc {
+    position: fixed;
+    top: 5.5rem;
+    left: calc(50vw - 32rem + var(--space-xl));
+    width: 11.5rem;
+    max-height: calc(100vh - 8rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    margin: 0;
+    padding: 0 0 var(--space-xs) var(--space-sm);
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: inset 2px 0 0 var(--border);
+    font-size: var(--scale-xs);
+    line-height: 1.4;
+  }
+
+  .note-body #markdown-toc::before {
+    margin-bottom: 0.6rem;
+  }
+
+  .note-body #markdown-toc a {
+    border-radius: 0;
+  }
+
+  .note-body #markdown-toc a:hover {
+    background: none;
+  }
+
+  .note-body .toc-marker {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 0;
+    background: var(--brand);
+    opacity: 0;
+    transition: transform 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+  }
+}
+
 blockquote {
   border-left: 4px solid var(--brand);
   padding-left: var(--space-md);

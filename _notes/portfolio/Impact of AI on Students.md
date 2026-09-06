@@ -4,6 +4,9 @@ feed: show
 date: 2026-07-21
 ---
 
+* toc
+{:toc}
+
 The goal of this project is to explore the effects of AI on students. The data is available on [Kaggle](https://www.kaggle.com/datasets/laveshjadon/ai-impact-on-students) and it's entirely synthetic. The aim is to
 
 - Perform EDA

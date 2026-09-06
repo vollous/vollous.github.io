@@ -155,4 +155,56 @@ document.addEventListener('DOMContentLoaded', function() {
     // Process all nodes in the content
     processWikiLinks(contentDiv);
 });
+
+// Table-of-contents scroll spy: highlight the section currently in view and
+// glide the accent bar to it (the bar only shows in the sidebar layout).
+document.addEventListener('DOMContentLoaded', function () {
+    const toc = document.getElementById('markdown-toc');
+    if (!toc) return;
+
+    const entries = Array.from(toc.querySelectorAll('a[href^="#"]'))
+        .map(function (link) {
+            const id = decodeURIComponent(link.getAttribute('href').slice(1));
+            return { link: link, heading: document.getElementById(id) };
+        })
+        .filter(function (e) { return e.heading; });
+    if (!entries.length) return;
+
+    const marker = document.createElement('span');
+    marker.className = 'toc-marker';
+    toc.appendChild(marker);
+
+    let current;
+    function setActive(entry) {
+        if (entry === current) return;
+        current = entry;
+        entries.forEach(function (e) {
+            e.link.classList.toggle('is-active', e === entry);
+        });
+        if (entry) {
+            marker.style.height = entry.link.offsetHeight + 'px';
+            marker.style.transform = 'translateY(' + entry.link.offsetTop + 'px)';
+            marker.style.opacity = '1';
+        } else {
+            marker.style.opacity = '0';
+        }
+    }
+
+    function onScroll() {
+        const line = 96; // a heading counts as "current" once it passes this y
+        let active = entries[0];
+        for (let i = 0; i < entries.length; i++) {
+            if (entries[i].heading.getBoundingClientRect().top <= line) {
+                active = entries[i];
+            } else {
+                break;
+            }
+        }
+        setActive(active);
+    }
+
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', function () { current = null; onScroll(); });
+});
 </script> 

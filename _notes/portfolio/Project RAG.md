@@ -4,6 +4,9 @@ feed: show
 date: 2026-09-03
 ---
 
+* toc
+{:toc}
+
 In this project, I wanted to take a very small LLM, sub 1B parameters, and boost its performance with a RAG system. I chose to work in the context of the **NumPy** documentation, since it contains many details, arguments and functions, so a small LLM is prone to hallucinating about it.
 
 The LLM I decided to use is [`ibm-granite/granite-4.0-h-350m`](https://huggingface.co/ibm-granite/granite-4.0-h-350m), which has only 350M parameters. It is so lightweight that it runs on my machine at incredible speed, and it also supports parallel calls on a single `ollama serve`. Because the model is so small, it does not hold much knowledge, which makes the difference between the plain chat and the RAG-powered chat more noticeable. For a production project one should, of course, use the best LLM available.

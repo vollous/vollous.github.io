@@ -4,6 +4,9 @@ feed: show
 date: 2026-08-21
 ---
 
+* toc
+{:toc}
+
 In this project, I tried to perform **zero-shot** anomaly detection on the MVTec database. By **zero-shot** we mean that we only train the model with nominal/anomaly-free pictures of the subjects, but then we want to be able to distinguish between nominal and anomalous. The MVTec database consists of a series of pictures of
 
 - bottle

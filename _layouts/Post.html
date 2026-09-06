@@ -100,11 +100,13 @@
 
             <!--- Notes Layout-->
             {%- if page.content-type == "notes" -%}
-                <h1>{{page.title}}</h1>
-                {%- include Content.html -%}
-                {%- if site.preferences.backlinks.enabled -%}
-                {%- include Backlinks.html -%}
-                {%- endif -%}
+                <div class="note-body">
+                    <h1>{{page.title}}</h1>
+                    {%- include Content.html -%}
+                    {%- if site.preferences.backlinks.enabled -%}
+                    {%- include Backlinks.html -%}
+                    {%- endif -%}
+                </div>
             {%- endif -%}
 
              <!--- Post Layout-->
