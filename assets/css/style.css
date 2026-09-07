@@ -18,7 +18,7 @@
   --space-lg: 2rem;
   --space-xl: 3rem;
   
-  --max-width: 64rem;
+  --max-width: 68rem;
   --line-height: 1.5;
   
   /* 5-level typography scale (1rem = 15px) */
@@ -686,9 +686,9 @@ a:hover {
 }
 
 /* Promote the TOC to a left sidebar once the centred column has gutter to spare.
-   50vw - 32rem is the left edge of the .container > div (max-width 64rem, centred);
+   50vw - half the column width is the left edge of the .container > div (centred);
    the write-up body is padded on the left to clear the rail. */
-@media (min-width: 1120px) {
+@media (min-width: 1200px) {
   .note-body:has(#markdown-toc) > h1,
   .note-body:has(#markdown-toc) > .content {
     padding-left: 15rem;
@@ -697,7 +697,7 @@ a:hover {
   .note-body #markdown-toc {
     position: fixed;
     top: 7.25rem;
-    left: calc(50vw - 32rem + var(--space-xl));
+    left: max(var(--space-sm), calc(50vw - (var(--max-width) / 2) + var(--space-xl)));
     width: 13rem;
     max-height: calc(100vh - 9rem);
     overflow-y: auto;
