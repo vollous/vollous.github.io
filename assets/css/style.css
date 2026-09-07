@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..600&display=swap');
 
 :root {
   --bg: rgb(255, 252, 240);
@@ -64,6 +64,12 @@ body {
   background: var(--bg);
   font-size: var(--scale-base);
   overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-optical-sizing: auto;
+  font-feature-settings: "kern", "liga", "calt", "cv05", "cv08";
+  font-synthesis: none;
 }
 
 .container {
@@ -72,7 +78,6 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding-top: var(--space-xl);
 }
 
 .container > div {
@@ -231,7 +236,9 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font);
   color: var(--title);
   margin-bottom: var(--space-sm);
-  line-height: 1.5;
+  line-height: 1.3;
+  letter-spacing: -0.014em;
+  text-wrap: balance;
 }
 
 /* Keep TOC anchor jumps from landing flush against the top of the viewport */
@@ -265,11 +272,12 @@ h4, h5, h6 {
 }
 
 p {
-  font-size: var(--scale-base); 
+  font-size: var(--scale-base);
   margin-bottom: var(--space-md);
   color: var(--text);
   line-height: 1.7;
   font-weight: 400;
+  text-wrap: pretty;
 }
 
 a {
@@ -808,6 +816,7 @@ ul, ol {
 li {
   margin-bottom: var(--space-xs);
   line-height: 1.6;
+  text-wrap: pretty;
 }
 
 strong {
@@ -1095,18 +1104,14 @@ td {
 }
 
 @media (max-width: 768px) {
-  .container {
-    padding-top: var(--space-md);
-  }
-  
   .container > div {
     padding: 0 var(--space-md) var(--space-md);
   }
-  
+
   .nav {
     margin-bottom: var(--space-lg);
   }
-  
+
   h1 {
     font-size: var(--scale-lg);
   }
@@ -1121,14 +1126,10 @@ td {
 }
 
 @media (max-width: 520px) {
-  .container {
-    padding-top: var(--space-sm);
-  }
-  
   .container > div {
     padding: 0 var(--space-sm) var(--space-sm);
   }
-  
+
   .btn {
     display: block;
     margin-bottom: var(--space-sm);
