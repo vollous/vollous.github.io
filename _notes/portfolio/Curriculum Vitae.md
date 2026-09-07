@@ -14,7 +14,7 @@ I'm **João "Chico" Viana**, a particle-physics researcher at the Faculdade
 de Ciências da Universidade de Lisboa. My PhD thesis is submitted and I'm
 awaiting the defence. My day-to-day work is heavy scientific computing, large parameter-space scans, numerical solutions of Boltzmann/transport equations, and finite-temperature field theory.
 
-This site documents my shift into data science/machine learning, which piqued my interest in recent years with the rise of the transformer and other architectures. My main interests are building highly reliable systems/models that are able to run without many resources. Here I present personal projects that showcase my skills in computing and data science/machine learning.
+This site documents my shift into data science/machine learning, which piqued my interest in recent years with the rise of the transformer and other architectures. Data holds a lot of value, though only as much as the processing, analysis and modelling behind it, and that is the part I enjoy most.
 
 [**Download the full CV (PDF)**](/assets/Curriculum_Vitae_Joao_Viana.pdf)
 
@@ -24,33 +24,21 @@ This site documents my shift into data science/machine learning, which piqued my
 
 ## Education
 
-- **PhD, Particle Physics and Astronomy**, *The early universe as a window to particle physics*, Faculdade de Ciências, Universidade de Lisboa (2022–2026). Thesis submitted; awaiting defence. Supervisor: Rui Santos. FCT fellowship PRT/BD/154191/2022.
+- **PhD, Physics and Astronomy**, *The early universe as a window to particle physics*, Faculdade de Ciências, Universidade de Lisboa (2022–2026). Thesis submitted; awaiting defence. Supervisor: Rui Santos. FCT fellowship PRT/BD/154191/2022.
 - **MSc, Nuclear and Particle Physics**, Faculdade de Ciências, Universidade de Lisboa (2019–2022), Final grade: 19, Thesis : Dark Matter, Gravitational Waves and Higgs invisible decays (Thesis grade: 20).
 - **BSc, Physics**, Faculdade de Ciências, Universidade de Lisboa (2016–2019), Final grade 18.
 - **Academic Merit Prizes**, Universidade de Lisboa, awarded 2016/17, 2017/18 and 2018/19.
 
 ## Computational & technical skills
 
-- Python for scientific computing, data analysis and plots; C++ for performance-critical code and Mathematica for symbolic computations; some working knowledge of R.
-- Mathematical skills: differential and integral calculus, linear algebra, statistics, multivariate analysis, complex analysis, mechanics.
-- Numerical methods: root finding, minimisation algorithms, ODE/PDE integration, Monte-Carlo and large-scale parameter scans.
-- Git, GitHub Actions CI/CD, and containerised workflows with Docker and Docker Compose.
-- OS: Windows, macOS and Linux.
+- **Languages:** Python (matplotlib, numpy, pandas, scipy, thread, beautifulsoup, scikit-learn, pytorch), C++, Mathematica; some working knowledge of R.
+- **Mathematics:** differential and integral calculus, linear algebra, statistics, multivariate analysis, complex analysis, mechanics.
+- **Numerical methods:** root finding, minimisation algorithms, ODE/PDE integration, Monte-Carlo and large-scale parameter scans.
+- **Machine learning & data science:** EDA and feature engineering, model selection across linear models, tree ensembles and neural nets; cross-validated hyperparameter search and decision-threshold tuning for imbalanced classes; unsupervised anomaly detection with convolutional autoencoders and PatchCore using transfer learning from pretrained CNN backbones; retrieval-augmented generation with locally-served models (Ollama), ChromaDB vector store and sentence-transformer embeddings.
+- **Tooling & deployment:** Git, GitHub Actions CI/CD, unittests, containerised workflows with Docker and Docker Compose, FastAPI services and Streamlit front-ends.
+- **OS**: Windows, macOS and Linux.
 
-## Machine learning & data science
-
-As machine learning is extremely important in particle physics, I attended two workshops on machine learning.
-
-- [**Machine Learning for Physics** workshop, LIP Lisboa](https://indico.lip.pt/event/1909/) — hands-on ML-for-physics exercises.
-- [**ML4Physics @ Ljubljana** school](https://indico.cern.ch/event/1488532/) — machine-learning methods for physics data.
-
-I have a toolchain of numerical skills, growing by the day, that can be used in a multitude of scenarios. That toolchain contains
-
-- **Python**: pytorch, scikit-learn, pandas, NumPy, Matplotlib, scipy, BeautifulSoup, thread.
-- **Tabular Data:**  EDA and feature engineering, model selection across linear models, tree ensembles and neural nets, cross-validated hyperparameter search, and evaluation with decision-threshold tuning for imbalanced classes.
-- **Computer vision:** unsupervised anomaly detection with convolutional autoencoders and PatchCore, using transfer learning from pretrained CNN backbones.
-- **LLMs & RAG:** retrieval-augmented generation with locally-served models (Ollama), ChromaDB vector store, and sentence-transformer embeddings.
-- **Deployment:** FastAPI services and Streamlit front-ends, containerised with Docker and orchestrated with Docker Compose.
+I attended two machine-learning workshops: the [**Machine Learning for Physics** workshop at LIP Lisboa](https://indico.lip.pt/event/1909/) and the [**ML4Physics @ Ljubljana** school](https://indico.cern.ch/event/1488532/).
 
 ## Scientific software
 
