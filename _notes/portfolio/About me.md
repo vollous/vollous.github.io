@@ -16,7 +16,7 @@ awaiting the defence. My day-to-day work is heavy scientific computing, large pa
 
 This site documents my shift into data science/machine learning, which piqued my interest in recent years with the rise of the transformer and other architectures. Data holds a lot of value, though only as much as the processing, analysis and modelling behind it, and that is the part I enjoy most.
 
-[**Download the full CV (PDF)**](/assets/CV João Viana.pdf)
+[**Download the full CV (PDF)**](/assets/Curriculum_Vitae_Joao_Viana.pdf)
 
 </div>
 
