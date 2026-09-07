@@ -56,7 +56,7 @@ I have a toolchain of numerical skills, growing by the day, that can be used in 
 
 - **BSMPT v3** — co-author of the open-source C++ tool for phase transitions and primordial gravitational waves in extended Higgs sectors (arXiv:2404.19037).
 
-## Relevant publications
+## Relevant articles
 
 Seven publications in total (full list in the PDF). The relevant one is
 
