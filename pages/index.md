@@ -31,24 +31,31 @@ I spent my PhD teaching computers to describe the universe's first fractions of 
 <a class="btn btn-ghost" href="https://github.com/vollous/Portfolio"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.5.3.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>Project code on GitHub</a>
 </div>
 
-<p class="section-intro">Each write-up covers the full path from exploratory analysis through model selection to evaluation.</p>
+<p class="section-intro">Each write-up goes through the whole project: looking at the data, trying out different models, and checking how well they actually work.</p>
 
 <div class="project-card" markdown="1">
 ### [[Impact of AI on Students]]
-EDA, regression on post-semester GPA, and threshold-tuned classification of
-burnout risk on a synthetic Kaggle dataset.
+A synthetic Kaggle dataset about students and AI use. I clean out values left
+over from the data being synthetic, then build one model to predict end-of-
+semester GPA (easy, it follows the starting GPA) and one to flag burnout risk
+(hard), tuned to catch 90% of high-risk students at the cost of some accuracy.
 </div>
 
 <div class="project-card" markdown="1">
 ### [[Anomaly detection on the MVTec AD database]]
-Zero-shot defect detection comparing convolutional autoencoders against
-PatchCore.
+Spotting defective products after training only on good images (zero-shot), tested on
+bottles, carpet, and hazelnuts. Convolutional autoencoders rebuild the image and
+flag bad rebuilds, better architectures are needed. PatchCore needs no training,
+compares each image to a memory bank of pretrained features, and was near
+perfect, and it also shows where the defect is.
 </div>
 
 <div class="project-card" markdown="1">
 ### [[RAG-Powered NumPy Documentation Assistant]]
-A sub-1B-parameter LLM boosted with a ChromaDB retrieval layer over the NumPy
-documentation, deployed with Docker Compose.
+A tiny 350M language model given a search layer over the NumPy docs, so it looks
+up the right page before answering. Runs in three Docker containers
+(model, backend, frontend) via Docker Compose. The plain model hallucinates functions
+and arguments. The version with RAG gets them right and admits when it can't.
 </div>
 
 <p class="more-link"><a href="{{ site.baseurl }}/notes">Browse all projects &rarr;</a></p>
