@@ -11,7 +11,7 @@ permalink: /
 
 Data science & machine learning, with a physicist's touch.
 
-I spent my PhD teaching computers to describe the universe's first fractions of a second. Now I point the same curiosity at data problems closer to home. My goal is to design and train highly efficient models that run reliably on limited resources. 
+I spent my PhD teaching computers to describe the universe's first fractions of a second. Now I point the same curiosity at data problems closer to home. Data holds a lot of value, though only as much as the processing, analysis and modelling behind it, and that is the part I enjoy most.
 
 <p class="hero-meta">
 <span class="hero-meta-item"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Lisbon, Portugal</span>
