@@ -36,7 +36,7 @@ I spent my PhD teaching computers to describe the universe's first fractions of 
 <div class="project-card" markdown="1">
 ### [[Impact of AI on Students]]
 A synthetic Kaggle dataset about students and AI use. I clean out values left over from the data being synthetic, then build several regression models to predict end-of-semester GPA (easy, it follows the starting GPA) and several classification models to flag burnout risk (hard), tuned to catch 90% of high-risk students at the cost of some accuracy.
-Skills: python (numpy, matplotlib, pandas, pytorch, scikit-learn).
+<br>**Skills**: Python (NumPy, Matplotlib, pandas, PyTorch, scikit-learn).
 </div>
 
 <div class="project-card" markdown="1">
@@ -46,6 +46,7 @@ bottles, carpet, and hazelnuts. Convolutional autoencoders rebuild the image and
 flag bad rebuilds, better architectures are needed. PatchCore needs no training,
 compares each image to a memory bank of pretrained features, and was near
 perfect, and it also shows where the defect is.
+<br>**Skills**: Python (PyTorch, NumPy, Matplotlib), convolutional autoencoders, PatchCore, transfer learning, ROC/AUC evaluation.
 </div>
 
 <div class="project-card" markdown="1">
@@ -54,6 +55,7 @@ A tiny 350M language model given a search layer over the NumPy docs, so it looks
 up the right page before answering. Runs in three Docker containers
 (llm, backend, frontend) via Docker Compose. The plain model hallucinates functions
 and arguments. The version with RAG gets them right and admits when it can't.
+<br>**Skills**: Python, LLMs, RAG (ChromaDB, Sentence Transformers), Ollama, FastAPI, Streamlit, Docker, Docker Compose, REST APIs.
 </div>
 
 <p class="more-link"><a href="{{ site.baseurl }}/notes">Browse all projects &rarr;</a></p>
