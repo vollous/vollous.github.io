@@ -22,25 +22,12 @@ This site documents my shift into data science/machine learning, which piqued my
 
 </div>
 
-## Languages
-
-- Portuguese (native)
-- English.
-
-## Skills
-- Perform thorough research and document the findings.
-- Learn new concepts easily using my maths/physics background.
-- Analyse sets of data and develop models to explain it.
-- Public speaking.
-- Manage and develop collaborative projects using git.
-- Deploy models into production. 
-
 ## Education
 
-- **PhD, Particle Physics and Astronomy** — *The early universe as a window to particle physics*, Faculdade de Ciências, Universidade de Lisboa (2022–2026). Thesis submitted; awaiting defence. Supervisor: Rui Santos. FCT fellowship PRT/BD/154191/2022.
-- **MSc, Nuclear and Particle Physics** — Faculdade de Ciências, Universidade de Lisboa (2019–2022).
-- **BSc, Physics** — Faculdade de Ciências, Universidade de Lisboa (2016–2019).
-- **Academic Merit Prizes** — Universidade de Lisboa, awarded 2016/17, 2017/18 and 2018/19.
+- **PhD, Particle Physics and Astronomy**, *The early universe as a window to particle physics*, Faculdade de Ciências, Universidade de Lisboa (2022–2026). Thesis submitted; awaiting defence. Supervisor: Rui Santos. FCT fellowship PRT/BD/154191/2022.
+- **MSc, Nuclear and Particle Physics**, Faculdade de Ciências, Universidade de Lisboa (2019–2022), Final grade: 19, Thesis : Dark Matter, Gravitational Waves and Higgs invisible decays (Thesis grade: 20).
+- **BSc, Physics**, Faculdade de Ciências, Universidade de Lisboa (2016–2019), Final grade 18.
+- **Academic Merit Prizes**, Universidade de Lisboa, awarded 2016/17, 2017/18 and 2018/19.
 
 ## Computational & technical skills
 
@@ -87,5 +74,10 @@ which contain my work in a computational project relevant for predicting the sig
 ## Teaching & mentoring
 
 - Supervised student projects at the CFTC Summer Internship Program (2023, 2024 and 2025).
+
+## Languages
+
+- Portuguese (native)
+- English.
 
 
