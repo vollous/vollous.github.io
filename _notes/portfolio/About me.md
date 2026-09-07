@@ -1,5 +1,5 @@
 ---
-title: Curriculum Vitae
+title: About me
 feed: hide
 date: 2026-09-03
 ---
