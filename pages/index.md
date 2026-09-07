@@ -52,7 +52,7 @@ perfect, and it also shows where the defect is.
 ### [[RAG-Powered NumPy Documentation Assistant]]
 A tiny 350M language model given a search layer over the NumPy docs, so it looks
 up the right page before answering. Runs in three Docker containers
-(model, backend, frontend) via Docker Compose. The plain model hallucinates functions
+(llm, backend, frontend) via Docker Compose. The plain model hallucinates functions
 and arguments. The version with RAG gets them right and admits when it can't.
 </div>
 
