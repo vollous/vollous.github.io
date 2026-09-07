@@ -42,7 +42,7 @@ PatchCore.
 </div>
 
 <div class="project-card" markdown="1">
-### [[Numpy RAG powered assistant]]
+### [[RAG-Powered NumPy Documentation Assistant]]
 A sub-1B-parameter LLM boosted with a ChromaDB retrieval layer over the NumPy
 documentation, deployed with Docker Compose.
 </div>

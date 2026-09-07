@@ -625,8 +625,8 @@ a:hover {
   background: var(--bg2);
   padding: var(--space-md);
   margin: var(--space-lg) 0;
-  font-size: var(--scale-sm);
-  line-height: 1.3;
+  font-size: var(--scale-base);
+  line-height: 1.35;
 }
 
 #markdown-toc::before {
@@ -691,14 +691,14 @@ a:hover {
 @media (min-width: 1120px) {
   .note-body:has(#markdown-toc) > h1,
   .note-body:has(#markdown-toc) > .content {
-    padding-left: 13rem;
+    padding-left: 15rem;
   }
 
   .note-body #markdown-toc {
     position: fixed;
     top: 7.25rem;
     left: calc(50vw - 32rem + var(--space-xl));
-    width: 11.5rem;
+    width: 13rem;
     max-height: calc(100vh - 9rem);
     overflow-y: auto;
     overscroll-behavior: contain;
@@ -708,8 +708,8 @@ a:hover {
     border: none;
     border-radius: 0;
     box-shadow: inset 2px 0 0 var(--border);
-    font-size: var(--scale-xs);
-    line-height: 1.4;
+    font-size: var(--scale-sm);
+    line-height: 1.45;
   }
 
   .note-body #markdown-toc::before {

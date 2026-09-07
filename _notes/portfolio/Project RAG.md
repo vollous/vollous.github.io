@@ -1,5 +1,5 @@
 ---
-title: Numpy RAG powered assistant
+title: RAG-Powered NumPy Documentation Assistant
 feed: show
 date: 2026-09-03
 ---
