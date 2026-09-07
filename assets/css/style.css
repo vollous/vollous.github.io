@@ -691,14 +691,14 @@ a:hover {
 @media (min-width: 1200px) {
   .note-body:has(#markdown-toc) > h1,
   .note-body:has(#markdown-toc) > .content {
-    padding-left: 15rem;
+    padding-left: 17.5rem;
   }
 
   .note-body #markdown-toc {
     position: fixed;
     top: 7.25rem;
     left: max(var(--space-sm), calc(50vw - (var(--max-width) / 2) + var(--space-xl)));
-    width: 13rem;
+    width: 16rem;
     max-height: calc(100vh - 9rem);
     overflow-y: auto;
     overscroll-behavior: contain;
