@@ -50,7 +50,7 @@ Seven publications in total (full list in the PDF). The relevant one is
 
 - **J. Viana**, C. H. van Dorp, A. Nunes, et al. — *Controlling the pandemic during the SARS-CoV-2 vaccination rollout*, [Nature Communications **12**, 3674](https://doi.org/10.1038/s41467-021-23938-8) (2021). *(data-driven epidemiological modelling)*
 
-which was made in an international collaboration to predict the evolution of the SARS-CoV-2 hospitalisations in Portugal. We used an MCMC algorithm to fit a master equation to the number of hospitalisations, which allowed us to estimate which groups were more vulnerable, the effects of vaccination and so on.
+which was made in an international collaboration with the DGS/Ministry of Health to predict the evolution of the SARS-CoV-2 hospitalisations in Portugal. We used an MCMC algorithm to fit a master equation to the number of hospitalisations, which allowed us to estimate which groups were more vulnerable, the effects of vaccination and the best vaccination rollout scenarios.
 
 The other two relevant publications are
 
