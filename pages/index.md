@@ -35,10 +35,8 @@ I spent my PhD teaching computers to describe the universe's first fractions of 
 
 <div class="project-card" markdown="1">
 ### [[Impact of AI on Students]]
-A synthetic Kaggle dataset about students and AI use. I clean out values left
-over from the data being synthetic, then build one model to predict end-of-
-semester GPA (easy, it follows the starting GPA) and one to flag burnout risk
-(hard), tuned to catch 90% of high-risk students at the cost of some accuracy.
+A synthetic Kaggle dataset about students and AI use. I clean out values left over from the data being synthetic, then build several regression models to predict end-of-semester GPA (easy, it follows the starting GPA) and several classification models to flag burnout risk (hard), tuned to catch 90% of high-risk students at the cost of some accuracy.
+Skills: python (numpy, matplotlib, pandas, pytorch, scikit-learn).
 </div>
 
 <div class="project-card" markdown="1">
