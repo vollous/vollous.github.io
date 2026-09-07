@@ -7,7 +7,11 @@ date: 2026-08-21
 * toc
 {:toc}
 
-In this project, I tried to perform **zero-shot** anomaly detection on the MVTec database. By **zero-shot** we mean that we only train the model with nominal/anomaly-free pictures of the subjects, but then we want to be able to distinguish between nominal and anomalous. The MVTec database consists of a series of pictures of
+# Introduction
+
+In this project, I tried to perform **zero-shot** anomaly detection on the MVTec database. By **zero-shot** we mean that we only train the model with nominal/anomaly-free pictures of the subjects, but then we still want to be able to distinguish between nominal and anomalous. I do this with two quite different algorithms, **Convolutional Autoencoders (CAE)** and **PatchCore**, and, where needed, pick the threshold that maximizes the `f1_score`. As we will soon see, CAEs perform particularly badly on this dataset while PatchCore shows amazing results.
+
+The MVTec database consists of a series of pictures of
 
 - bottle
 - cable
@@ -41,7 +45,7 @@ Due to computational and time limitations, I will only focus on three categories
 ![[bcb9ab83b421c488a71c01a5565de680a107f178.png|400]]
 # Methods
 
-I will try to find the anomalies using two quite different algorithms: **Convolutional Autoencoders (CAE)** and **PatchCore**. As we will soon see, CAEs perform particularly badly on this dataset while PatchCore shows amazing results. If needs be, we will select the threshold that maximizes the `f1_score`.
+Here I go over how each of the two algorithms works, plus a first attempt with plain MLP autoencoders that did not work.
 
 ## **Convolutional Autoencoders (CAE)**
 
@@ -409,3 +413,7 @@ with a separation of $0.3$.
 Again, if inference speed is important, one could trade this model for
 `num_neighbors = 6/10, coreset_sampling_ratio = 0.001, backbone = wide_resnet50_2`
 which has a separation of $0.18$, i.e. comparable with $0.3$, but has an inference speed many times faster than the previous model.
+
+# Conclusion
+
+The CAEs did badly, barely better than a coin flip on `bottle` and `hazelnut`, and worse than a coin flip on `carpet`. Most of the blame goes to a bottleneck that was too wide, so the networks manage to reconstructed defects they had never seen, it also turned out that a lower reconstruction loss does not mean a better anomaly detector and that each model should be given a try at finding anomalies. PatchCore, which needs no training at all, was almost perfect (`AUC` around $1$ for `bottle` and `hazelnut`), with `wide_resnet50_2` always beating `resnet50` and, a bit surprisingly, smaller memory banks often separating the classes better. So, at least for this kind of task, a pretrained-feature memory bank is both much better and much cheaper to build than training autoencoders.

@@ -7,6 +7,8 @@ date: 2026-09-03
 * toc
 {:toc}
 
+# Introduction
+
 In this project, I wanted to take a very small LLM, sub 1B parameters, and boost its performance with a RAG system. I chose to work in the context of the **NumPy** documentation, since it contains many details, arguments and functions, so a small LLM is prone to hallucinating about it.
 
 The LLM I decided to use is [`ibm-granite/granite-4.0-h-350m`](https://huggingface.co/ibm-granite/granite-4.0-h-350m), which has only 350M parameters. It is so lightweight that it runs on my machine at incredible speed, and it also supports parallel calls on a single `ollama serve`. Because the model is so small, it does not hold much knowledge, which makes the difference between the plain chat and the RAG-powered chat more noticeable. For a production project one should, of course, use the best LLM available.
@@ -104,6 +106,6 @@ In the third example, the LLM refuses to answer the question because it is beyon
 
 ![[4c5cc6b249c07770b600fd77ae28455fece6d25f.png]]
 
-# Conclusions
+# Conclusion
 
-This RAG system is, of course, overkill: a decent-sized LLM most likely already knows enough to answer these NumPy questions. Nevertheless, similar implementations can be used for internal company documentation, customer support chatbots, and so on.
+On its own, the little 350M model hallucinates a lot of NumPy details, and handing it the retrieved documentation fixes most of that, it even admits when it does not have enough information to answer the question. The setup was simple, one chunk per page, plain cosine distance, no reranker. This RAG system is overkill, since a decent-sized LLM most likely already knows enough to answer these NumPy questions. Still, the same stack maps directly onto internal company documentation, customer support chatbots, and so on.

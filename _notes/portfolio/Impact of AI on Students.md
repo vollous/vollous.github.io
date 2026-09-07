@@ -7,11 +7,15 @@ date: 2026-07-21
 * toc
 {:toc}
 
+# Introduction
+
 The goal of this project is to explore the effects of AI on students. The data is available on [Kaggle](https://www.kaggle.com/datasets/laveshjadon/ai-impact-on-students) and it's entirely synthetic. The aim is to
 
 - Perform EDA
 - Train a model to predict `Post_Semester_GPA` (regression)
 - Train a model to predict `Burnout_Risk_Level`, with at least $90\%$ recall on the `High` class so that those students can receive proper care
+
+On the methods side, I do the usual EDA with scatter and correlation plots and, along the way, a couple of statistical tests to spot and drop some artefacts left over from the data being synthetic. The categorical columns are turned into numbers with ordinal or one-hot encoding. For both targets I run a feature selection step (`RFECV` with a boosted tree and with a random forest, plus tree-based importance) and then train a big batch of models (linear regression, KNN, random forests, boosted trees, SVR/SVC, and a neural network for the classification) using K-fold to keep the sampling bias down. For the burnout classifier I also tune the decision threshold so that I catch most of the `High` cases.
 
 # EDA
 
@@ -258,3 +262,7 @@ $$\text{accuracy} = 0.43 \pm 0.01.$$
 This is around $20\%$ lower than the model without threshold, but still above $\frac{1}{3}$ (random chance).
 
 We could also have combined the `Low` and `Medium` classes from the start, performed binary classification and binary threshold tuning. This would have simplified a lot of the methods and maybe increased performance. This was not done because it might be useful to know which students are in the `Medium` class, so that they can also be helped. It's just that misclassifying a `High` student is worse than misclassifying a `Medium` student.
+
+# Conclusion
+
+Predicting `Post_Semester_GPA` turned out to be easy as it is basically set by `Pre_Semester_GPA`, with a small nudge from the traditional study hours, and the best model lands an `RMSE` of about $4\%$ of the average. `Burnout_Risk_Level` was the opposite story with no feature really stood out in the EDA, and the models barely reach $0.53$ accuracy against a $1/3$ baseline. Pushing the `High` recall up to $0.9$ costs about $20\%$ of that accuracy, which is a nice concrete example of trading accuracy for recall when missing a case is expensive. A fair chunk of the work was just noticing and cleaning up the weird excesses that the synthetic data brought with it.
