@@ -39,18 +39,20 @@ This site documents my shift into data science/machine learning, which piqued my
 - **OS**: Windows, macOS and Linux.
 
 I attended two machine-learning workshops: the [**Machine Learning for Physics** workshop at LIP Lisboa](https://indico.lip.pt/event/1909/) and the [**ML4Physics @ Ljubljana** school](https://indico.cern.ch/event/1488532/).
-
+ß
 ## Scientific software
 
 - **BSMPT v3** — co-author of the open-source C++ tool for phase transitions and primordial gravitational waves in extended Higgs sectors (arXiv:2404.19037).
+
+This project taught me how to use Git and GitHub for collaboration and version control. I also learned the value of CI/CD and unit tests in ensuring that the code was independently tested and that new features did not break existing functionality. It improved my coding best practices and showed me the importance of clear documentation, helping ensure that the project can be maintained by future PhD students.
 
 ## Relevant articles
 
 Seven publications in total (full list in the PDF). The relevant one is
 
-- **J. Viana**, C. H. van Dorp, A. Nunes, et al. — *Controlling the pandemic during the SARS-CoV-2 vaccination rollout*, [Nature Communications **12**, 3674](https://doi.org/10.1038/s41467-021-23938-8) (2021). *(data-driven epidemiological modelling)*
+- **Controlling the pandemic during the SARS-CoV-2 vaccination rollout**, [Nature Communications 12, 3674](https://doi.org/10.1038/s41467-021-23938-8) (2021). *(data-driven epidemiological modelling)*, **J. Viana**, C. H. van Dorp, A. Nunes, et al.
 
-which was made in an international collaboration with the DGS/Ministry of Health to predict the evolution of the SARS-CoV-2 hospitalisations in Portugal. We used an MCMC algorithm to fit a master equation to the number of hospitalisations, which allowed us to estimate which groups were more vulnerable, the effects of vaccination and the best vaccination rollout scenarios.
+This work was made in an international collaboration with the DGS/Ministry of Health to predict the evolution of the SARS-CoV-2 hospitalisations in Portugal. We used an MCMC algorithm to fit a master equation to the number of hospitalisations, which allowed us to estimate which groups were more vulnerable, the effects of vaccination and the best vaccination rollout scenarios.
 
 The other two relevant publications are
 
