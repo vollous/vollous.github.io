@@ -64,6 +64,7 @@ which contain my work in a computational project relevant for predicting the sig
 ## Teaching & mentoring
 
 - Supervised student projects at the CFTC Summer Internship Program (2023, 2024 and 2025).
+- Gave occasional lectures on gravitational waves and baryogenesis.
 
 ## Languages
 
