@@ -48,7 +48,7 @@ This project taught me how to use Git and GitHub for collaboration and version c
 
 ## Relevant articles
 
-Seven publications in total (full list in the PDF). The relevant one is
+I have seven publications from my academic carrer. A relevant one is
 
 - **Controlling the pandemic during the SARS-CoV-2 vaccination rollout**, [Nature Communications 12, 3674](https://doi.org/10.1038/s41467-021-23938-8) (2021). *(data-driven epidemiological modelling)*, **J. Viana**, C. H. van Dorp, A. Nunes, et al.
 
