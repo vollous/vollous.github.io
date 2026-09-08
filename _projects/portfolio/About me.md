@@ -39,7 +39,7 @@ This site documents my shift into data science/machine learning, which piqued my
 - **OS**: Windows, macOS and Linux.
 
 I attended two machine-learning workshops: the [**Machine Learning for Physics** workshop at LIP Lisboa](https://indico.lip.pt/event/1909/) and the [**ML4Physics @ Ljubljana** school](https://indico.cern.ch/event/1488532/).
-ß
+
 ## Scientific software
 
 - **BSMPT v3** — co-author of the open-source C++ tool for phase transitions and primordial gravitational waves in extended Higgs sectors (arXiv:2404.19037).
