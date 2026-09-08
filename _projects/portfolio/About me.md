@@ -25,7 +25,7 @@ This site documents my shift into data science/machine learning, which piqued my
 ## Education
 
 - **PhD, Physics and Astronomy**, *The early universe as a window to particle physics*, Faculdade de Ciências, Universidade de Lisboa (2022–present). Thesis submitted; awaiting defence. Supervisor: Rui Santos. FCT fellowship PRT/BD/154191/2022.
-- **MSc, Nuclear and Particle Physics**, Faculdade de Ciências, Universidade de Lisboa (2019–2022), Final grade: 19, Thesis : Dark Matter, Gravitational Waves and Higgs invisible decays (Thesis grade: 20).
+- **MSc, Nuclear and Particle Physics**, *Dark Matter, Gravitational Waves and Higgs invisible decays* (Thesis grade: 20), Faculdade de Ciências, Universidade de Lisboa (2019–2022), Final grade: 19.
 - **BSc, Physics**, Faculdade de Ciências, Universidade de Lisboa (2016–2019), Final grade 18.
 - **Academic Merit Prizes**, Universidade de Lisboa, awarded 2016/17, 2017/18 and 2018/19.
 
