@@ -45,8 +45,7 @@ A synthetic Kaggle dataset about students and AI use. I clean out values left ov
 Spotting defective products after training only on good images (zero-shot), tested on
 bottles, carpet, and hazelnuts. Convolutional autoencoders rebuild the image and
 flag bad rebuilds, better architectures are needed. PatchCore needs no training,
-compares each image to a memory bank of pretrained features, and was near
-perfect, and it also shows where the defect is.
+compares each image to a memory bank of pretrained features, performs much better than the AEs tested, and it also shows where the defect is.
 <br>**Skills**: Python (PyTorch, NumPy, Matplotlib), convolutional autoencoders, PatchCore, transfer learning, ROC/AUC evaluation.
 </div>
 
@@ -54,8 +53,7 @@ perfect, and it also shows where the defect is.
 ### [[RAG-Powered NumPy Documentation Assistant]]
 A tiny 350M language model given a search layer over the NumPy docs, so it looks
 up the right page before answering. Runs in three Docker containers
-(llm, backend, frontend) via Docker Compose. The plain model hallucinates functions
-and arguments. The version with RAG gets them right and admits when it can't.
+(llm, backend, frontend) via Docker Compose. The plain model sometimes hallucinates functions and arguments. The RAG version performs better and admits when it can't answer.
 <br>**Skills**: Python, LLMs, RAG (ChromaDB, Sentence Transformers), Ollama, FastAPI, Streamlit, Docker, Docker Compose, REST APIs.
 </div>
 
