@@ -5,7 +5,7 @@ portfolio of data science and machine learning project write-ups.
 
 ## Structure
 
-- `_notes/portfolio/` — the project write-ups (published at `/notes/<slug>`)
+- `_projects/portfolio/` — the project write-ups (published at `/projects/<slug>`)
   and their `*-media/` image folders.
 - `pages/` — home, about, projects index, 404, credits.
 - `_plugins/obsidian_math.rb` — Obsidian-style `$…$` / `$$…$$` math.

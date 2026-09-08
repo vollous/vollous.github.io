@@ -4,7 +4,7 @@ permalink: /SearchData.json
 
 {
   {%- assign i = 0 -%}
-  {%- for note in site.notes -%}
+  {%- for note in site.projects -%}
   {%- if note.feed == "hide" -%}{%- continue -%}{%- endif -%}
   {%- if i > 0 -%},{%- endif -%}
 

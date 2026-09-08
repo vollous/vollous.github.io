@@ -1,0 +1,241 @@
+{
+  "main": {
+    "id": "2ea202f3dd877361",
+    "type": "split",
+    "children": [
+      {
+        "id": "6d2abe0750276c95",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a6bce720d24b2c2f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "About me.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "About me"
+            }
+          },
+          {
+            "id": "6a4dd6338d29d769",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://indico.cern.ch/event/1488532/",
+                "title": "ML4Physics@Ljubljana school (26 June 2025 - 2 July 2025): Overview · Indico",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "ML4Physics@Ljubljana school (26 June 2025 - 2 July 2025): Overview · Indico"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4123d07649c7158b",
+    "type": "split",
+    "children": [
+      {
+        "id": "4083ac72c5f93fcb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7746cc028332e182",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "0ba40f91b2e00af1",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "Curriculum_Vitae_Joao_Viana",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "696c7ad381804780",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "64cfc8c39b0455c7",
+    "type": "split",
+    "children": [
+      {
+        "id": "a9888d3fa66885c9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f9e76132481251b5",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Curriculum Vitae.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "27d0a172b60a690e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Curriculum Vitae.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "ca5fe8ae53a1fe7e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "0db3dac94518ab39",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "d70f643840b072ab",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Curriculum Vitae.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          },
+          {
+            "id": "078ba1e27c3b7a98",
+            "type": "leaf",
+            "state": {
+              "type": "footnotes",
+              "state": {
+                "file": "Curriculum Vitae.md"
+              },
+              "icon": "lucide-file-signature",
+              "title": "Footnotes"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "markdown-importer:Open format converter": false
+    }
+  },
+  "active": "0ba40f91b2e00af1",
+  "lastOpenFiles": [
+    "Project RAG.md",
+    "Impact of AI on Students.md",
+    "About me.md",
+    "Anomaly detection on the MVTec AD database.md",
+    "Customization.md",
+    "Welcome to hell!!!!.md",
+    "Project RAG-media/cd8bba5f342bdd6ac63edec6d727220fdc0e7478.png",
+    "Project RAG-media/4c5cc6b249c07770b600fd77ae28455fece6d25f.png",
+    "Project RAG-media/bc7f3fbd8a7421ebd6b2f7b455b76548d1aab922.png",
+    "Project RAG-media/36a03ffd5fedf4e3744cec52a2475ea854d4a8a0.png",
+    "Project RAG-media",
+    "Project Computer Vision-media/f1019bdcb6299a6ac5a99a14f3fb5d5b6d901c33.png",
+    "Project Computer Vision-media/e4f93065b37ce3022cef7bc270e576abdc2d9928.png",
+    "Project Computer Vision-media/d6231d4e0e9396a9a39110e652c088ae39b0a06c.png",
+    "Project Computer Vision-media/d135b52da3edfe3b28ea2d06c68958acb6eb5553.png",
+    "Project Computer Vision-media/bcb9ab83b421c488a71c01a5565de680a107f178.png",
+    "Project Computer Vision-media/a08db728849ec2e11b919d4297a17a7378a0e1d9.png",
+    "Project Computer Vision-media",
+    "Project AI students-media"
+  ]
+}

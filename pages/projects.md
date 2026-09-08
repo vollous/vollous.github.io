@@ -1,7 +1,7 @@
 ---
 title: Projects
 layout: Post
-permalink: /notes
+permalink: /projects
 ---
 
 Project write-ups, newest first. Use the search box to filter by keyword.

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Get all available notes for link resolution
     const availableNotes = [
-        {%- for note in site.notes -%}
+        {%- for note in site.projects -%}
             {
                 title: "{{ note.title | escape }}",
                 url: "{{ site.baseurl }}{{ note.url }}",

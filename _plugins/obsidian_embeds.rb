@@ -8,9 +8,9 @@
 #     ![[some-image.png|alt text|300]]   # alt text + 300px wide
 #
 # instead of hand-written <figure><img> blocks. Media files can live anywhere
-# under _notes/ (e.g. `_notes/portfolio/Project RAG-media/foo.png`); the `notes`
-# collection permalink (/:collection/:name) flattens every static file to
-# `/notes/<basename>`, so we only ever need the file's basename here.
+# under _projects/ (e.g. `_projects/portfolio/Project RAG-media/foo.png`); the
+# `projects` collection permalink (/:collection/:name) flattens every static file
+# to `/projects/<basename>`, so we only ever need the file's basename here.
 #
 # Runs before Liquid/Markdown so the emitted <img> survives kramdown untouched
 # and never reaches the client-side [[wiki link]] processor in _includes/Content.html.
@@ -40,7 +40,7 @@ module ObsidianEmbeds
       end
 
       # Blank lines keep kramdown from folding adjacent text into the HTML block.
-      %(\n\n<figure><img src="#{baseurl}/notes/#{base}" alt="#{alt}"#{dims} /></figure>\n\n)
+      %(\n\n<figure><img src="#{baseurl}/projects/#{base}" alt="#{alt}"#{dims} /></figure>\n\n)
     end
   end
 end

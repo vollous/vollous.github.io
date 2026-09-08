@@ -1,6 +1,6 @@
 {%- assign link_count = 0 -%}
 {%- assign wiki_link_title = '[' | append: page.title | append: ']' -%}
-{%- for note in site.notes -%}
+{%- for note in site.projects -%}
         {%- if note.url != page.url -%}
             {%- if note.content contains wiki_link_title -%}
                 {%- assign link_count = link_count | plus:1 -%}
@@ -30,7 +30,7 @@
 <div class="links-section {{display_class}}" id="jekyll-seamless-backlinks">
     <h6>Links to this note</h6>
     <ul class="links-grid">
-        {%- for note in site.notes -%}
+        {%- for note in site.projects -%}
         {%- if note.url != page.url -%}
             {%- if note.content contains wiki_link_title -%}
             <li><a href="{{ site.baseurl }}{{note.url}}">{{ note.title }}</a></li>

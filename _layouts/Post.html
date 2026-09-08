@@ -5,7 +5,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="{{ site.title | default: site.heading }}" property="og:site_name" />
     <meta content="{{ site.description | default: 'A Jekyll Garden site' }}" property="og:description">
-    <meta content="{{ site.url }}/notes/curriculum-vitae" property="article:author">
+    <meta content="{{ site.url }}/projects/curriculum-vitae" property="article:author">
     {%- if site.og_image -%}
     <meta property="og:image" content="{{ site.baseurl }}{{ site.og_image }}">
     {%- endif -%}
@@ -91,7 +91,7 @@
             {%- endif -%}
 
             <!--- Notes Feed Layout-->
-            {%- if page.permalink == "/notes" -%}
+            {%- if page.permalink == "/projects" -%}
                 <h1>{{page.title}}</h1>
                 {%- include Content.html -%}
                 {%- include Search.html -%}
@@ -99,7 +99,7 @@
             {%- endif -%}
 
             <!--- Notes Layout-->
-            {%- if page.content-type == "notes" -%}
+            {%- if page.content-type == "projects" -%}
                 <div class="note-body">
                     <h1>{{page.title}}</h1>
                     {%- include Content.html -%}
