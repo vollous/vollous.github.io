@@ -59,7 +59,7 @@ The other two relevant publications are
 - P. Basler, L. Biermann, M. Mühlleitner, J. Müller, R. Santos, **J. Viana** — *BSMPT v3: A Tool for Phase Transitions and Primordial Gravitational Waves in Extended Higgs Sectors*, [arXiv:2404.19037](https://arxiv.org/abs/2404.19037) (2024).
 - M. Mühlleitner, J. Plotnikov, R. Santos, **J. Viana** — *A Deep Dive into Baryon Asymmetry — the C2HDM*, [arXiv:2606.04229](https://arxiv.org/abs/2606.04229) (2026). 
 
-which contain my work in a computational project relevant for predicting the signal of gravitational waves in future experiments, that code is BSMPT.
+which contain my work in a computational project relevant for predicting the signal of gravitational waves in future experiments and to calculate the baryon asymmetry predicted by the model, that code is BSMPT.
 
 ## Teaching & mentoring
 
