@@ -6,3 +6,5 @@ vendor
 _notes/portfolio/.obsidian/
 .DS_Store
 assets/img/*-how-to.png
+*.DS_Store
+**/.DS_Store
