@@ -59,6 +59,26 @@ up the right page before answering. Runs in three Docker containers
 
 <p class="more-link"><a href="{{ site.baseurl }}/projects">Browse all projects &rarr;</a></p>
 
+<div class="section-head">
+<h2 id="past-work">Past work</h2>
+</div>
+
+<p class="section-intro">Computational and data-driven projects from my physics research career. With a small stint in epidemiology</p>
+
+<div class="past-card" markdown="1">
+### BSMPT
+Co-developer of the open-source C++ tool for phase transitions and primordial gravitational waves in extended Higgs sectors, later extended to compute the baryon asymmetry. Large parameter-space scans, numerical solutions of transport equations, and finite-temperature field theory, built with Git-based collaboration, CI/CD, and unit tests.
+<br>**Skills**: C++, Python, numerical methods, Monte-Carlo and large-scale parameter scans, Git, GitHub Actions CI/CD, unit testing.
+<span class="past-links">[arXiv:2404.19037](https://arxiv.org/abs/2404.19037) · [A Deep Dive into Baryon Asymmetry (arXiv:2606.04229)](https://arxiv.org/abs/2606.04229) · [Code on GitHub](https://github.com/phbasler/BSMPT)</span>
+</div>
+
+<div class="past-card" markdown="1">
+### Controlling the pandemic during the SARS-CoV-2 vaccination rollout
+Data-driven epidemiological modelling in an international collaboration with the DGS / Portuguese Ministry of Health to forecast SARS-CoV-2 hospitalisations in Portugal. We fit a master equation to the hospitalisation data with an MCMC algorithm, estimating which groups were most vulnerable, the effect of vaccination, and the best vaccination rollout scenarios.
+<br>**Skills**: Python, MCMC / Bayesian inference, master (rate) equations, model fitting, epidemiological modelling.
+<span class="past-links">[Nature Communications 12, 3674 (2021)](https://doi.org/10.1038/s41467-021-23938-8) · [Code on GitHub](https://github.com/lynxgav/COVID19-vaccination)</span>
+</div>
+
 <script>
 (function () {
   var link = document.getElementById('email-copy');

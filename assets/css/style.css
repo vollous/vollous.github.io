@@ -856,6 +856,41 @@ hr {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
+/* Past work — research output, links out to papers/repos (no stretched link) */
+.past-card {
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: var(--space-sm) var(--space-md);
+  margin-bottom: var(--space-md);
+  background: var(--bg2);
+}
+
+.past-card > :last-child {
+  margin-bottom: 0;
+}
+
+.past-card h3 {
+  margin: 0 0 var(--space-xs);
+  font-size: var(--scale-lg);
+  color: var(--title);
+}
+
+.past-card p {
+  margin-bottom: 0;
+  font-size: var(--scale-sm);
+  line-height: 1.6;
+}
+
+.past-card .past-links {
+  display: block;
+  margin-top: var(--space-xs);
+  font-size: var(--scale-sm);
+}
+
+.past-card .past-links a {
+  margin-right: var(--space-sm);
+}
+
 ul, ol {
   margin-bottom: var(--space-md);
   padding-left: var(--space-lg);
