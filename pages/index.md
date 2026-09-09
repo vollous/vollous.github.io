@@ -63,7 +63,7 @@ up the right page before answering. Runs in three Docker containers
 <h2 id="past-work">Past work</h2>
 </div>
 
-<p class="section-intro">Computational and data-driven projects from my physics research career, with a small stint in epidemiology</p>
+<p class="section-intro">Computational and data-driven projects from my physics research career, with a small stint in epidemiology.</p>
 
 <div class="past-card" markdown="1">
 ### BSMPT
