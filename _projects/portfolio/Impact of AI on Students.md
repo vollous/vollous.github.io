@@ -212,31 +212,23 @@ We trained a large set of models using K-fold (k = 5) to reduce sampling bias. T
 
 In the next plot, I show the top-20 performing models, according to their `accuracy` which is defined as $$\text{accuracy} \equiv \frac{\text{True Positives} + \text{True Negatives}}{\text{True Positives} + \text{False Negatives} + \text{False Positives} + \text{True Negatives}} = \frac{\text{Correct}}{\text{All}}$$
 
-In the following plot, I show the class `f1_score`, defined as the harmonic average of precision and recall, defined as
-$$\text{F1}\equiv \frac{2}{1/\text{precision} + 1/\text{recall}},$$ where precision and recall are defined as
-$$\text{precision} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Positives}},$$
-$$\text{recall} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Negatives}}.$$
-
-Basically, `precision` tells you whether you can trust your model when it predicts a specific class. And recall tells you how many class elements were successfully classified.
-
 ![[91ee992b6739198819cebbc8795c9c3bb876d6db.png]]
 
-Although some models have very slightly better scores than others, the differences fall within the sampling variation and therefore there is no clear winner. For the following section, we will take the NN model with $2$ hidden layers, each with $512$ neurons, no dropout and with a `ReLU` activation function as our benchmark model.
+In binary classification, an accuracy of around $0.5$ would be disastrous as it would be no better than random chance. Since we have $3$ target classes, random chance would yield $1/3$ accuracy, so an accuracy of around $0.52 - 0.54$ shows that the model learned some of the features. That being said, these models are still considered to be rather poor at classifying `Burnout_Risk_Level`.
 
-In binary classification, an accuracy of around $0.5$ would be disastrous as it would be no better than random chance. Since we have $3$ target classes, random chance would yield $1/3$ accuracy, so an accuracy of around $0.52 - 0.54$ shows that the model learned some of the features. That being said, these models are still considered rather poor at classifying `Burnout_Risk_Level`.
-
-In the following plot, we plot each class's `f1-score` for the top-20 accuracy performers, which is defined as
-$$\text{F1}\equiv \frac{2}{1/\text{precision} + 1/\text{recall}},$$ where precision and recall are defined as
+In the following plot, we plot the each class `f1-score`, defined as the harmonic average of precision and recall, of the top-20 accuracy performers split into each class. The `f1-score` is defined as
+$$\text{F1}\equiv \frac{2}{1/\text{precision} + 1/\text{recall}},$$ and precision and recall is defined as
 $$\text{precision} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Positives}},$$
 $$\text{recall} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Negatives}}.$$
 
 `precision` $\to$ how many predicted elements of that class actually belong to that class
-`recall` $\to$ how many elements of that specific class were successfully classified.
-
-From the plot, we can see that `High` seems to have a slightly lower `f1-score`, so it's slightly less performant, while for the other two it's a mixed bag.
+`recall` $\to$  how many elements of that specific class where successfully classified.
 
 ![[7293eee24a4805703474d6799a7eebf02c4caf3a.png]]
 
+From the plot, we can see that `High` seems to have a slightly lower `f1-score` so its slightly less performant, while for the other two its a mixed bag.
+
+Although some models have very slightly better scores than others, the differences fall within the sampling variation and therefore, there is no clear winner. For the following section, we will take the NN model with $2$ hidden layers, each with $512$ neurons, no dropout and with a `ReLU` activation function as our benchmark model.
 ## Threshold tuning
 
 For many scenarios, the cost of mispredicting a class can be very high and, for that reason, it's worth trading some model accuracy for recall in a particular class. For our scenario, it is important to detect students close to burnout, so that they can get proper treatment/help.
