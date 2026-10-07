@@ -31,7 +31,7 @@ This site documents my shift into data science/machine learning, which piqued my
 
 ## Computational & technical skills
 
-- **Languages:** Python (matplotlib, numpy, pandas, scipy, thread, beautifulsoup, scikit-learn, pytorch), C++, Mathematica; some working knowledge of R.
+- **Languages:** Python (matplotlib, numpy, pandas, scipy, thread, beautifulsoup, scikit-learn, pytorch), C++, SQL, Mathematica; some working knowledge of R.
 - **Mathematics:** differential and integral calculus, linear algebra, statistics, multivariate analysis, complex analysis, mechanics.
 - **Numerical methods:** root finding, minimisation algorithms, ODE/PDE integration, Monte-Carlo and large-scale parameter scans.
 - **Machine learning & data science:** EDA and feature engineering, model selection across linear models, tree ensembles and neural nets; cross-validated hyperparameter search and decision-threshold tuning for imbalanced classes; unsupervised anomaly detection with convolutional autoencoders and PatchCore using transfer learning from pretrained CNN backbones; retrieval-augmented generation with locally-served models (Ollama), ChromaDB vector store and sentence-transformer embeddings.
